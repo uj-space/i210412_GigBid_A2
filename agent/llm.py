@@ -67,10 +67,6 @@ def get_node_llm(node_name: str, profile: str | None = None):
                 "GROQ_MODEL",
                 "llama-3.1-8b-instant" if node_name in _FAST_NODES else "llama-3.3-70b-versatile",
             )
-        elif openrouter_key:
-            base_url = os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
-            api_key = openrouter_key
-            model_name = os.environ.get("OPENROUTER_MODEL", "qwen/qwen3-32b:free")
         elif nvidia_key:
             base_url = os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1")
             api_key = nvidia_key
@@ -78,6 +74,10 @@ def get_node_llm(node_name: str, profile: str | None = None):
                 "NVIDIA_MODEL",
                 "meta/llama-3.1-8b-instruct" if node_name in _FAST_NODES else "meta/llama-3.3-70b-instruct",
             )
+        elif openrouter_key:
+            base_url = os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
+            api_key = openrouter_key
+            model_name = os.environ.get("OPENROUTER_MODEL", "qwen/qwen3-32b:free")
         elif groq_key:
             base_url = os.environ.get("GROQ_BASE_URL", "https://api.groq.com/openai/v1")
             api_key = groq_key
