@@ -8,10 +8,13 @@ from rag.retriever import retrieve_evidence
 
 
 def fit_matcher_node(state: GigBidState) -> GigBidState:
+    job = state.get("job", {}) or {}
     job_spec = state.get("job_spec", {}) or {}
-    skills = list(job_spec.get("required_skills", []) or [])
+    # Read skills from job directly (analyst and fit_matcher run in parallel,
+    # so job_spec may not be populated yet from analyst)
+    skills = list(job.get("required_skills", []) or [])
     deliverables = list(job_spec.get("deliverables", []) or [])
-    query = " ".join(skills + deliverables + [job_spec.get("title", "")])
+    query = " ".join(skills + deliverables + [job.get("title", "")])
 
     evidence = retrieve_evidence(query, k=8, persona=state.get("user_id", "default"))
     matched = []

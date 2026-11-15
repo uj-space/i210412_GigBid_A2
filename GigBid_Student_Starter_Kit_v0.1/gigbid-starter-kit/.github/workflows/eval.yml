@@ -1,0 +1,56 @@
+name: Evaluation CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 2 * * *'  # Daily at 02:00 UTC
+
+jobs:
+  smoke-eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Run RAG evaluation
+        run: python -m evals.runners.rag_eval
+
+      - name: Run decision evaluation
+        run: python -m evals.runners.decision_eval || true
+
+      - name: Run GigSim smoke eval (30 jobs)
+        run: python -m evals.runners.gigsim_outcomes --jobs 30 || true
+
+      - name: Fail if thresholds breached
+        run: |
+          python -c "
+          import json
+          with open('evals/results/rag_eval.json') as f:
+            r = json.load(f)
+          # Threshold: best variant recall must exceed V0 baseline by 15%
+          baseline = r['results']['v0']['evidence_recall_at_5']
+          best = max(v['evidence_recall_at_5'] for v in r['results'].values())
+          print(f'Baseline V0 recall: {baseline:.3f}, Best: {best:.3f}')
+          if best <= baseline + 0.15:
+            print('FAIL: Best variant does not exceed V0 by 15 points')
+            exit(1)
+          print('PASS: Thresholds met')
+          "
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: evals/results/

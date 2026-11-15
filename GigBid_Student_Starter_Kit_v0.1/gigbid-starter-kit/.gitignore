@@ -12,3 +12,8 @@ build/
 data/processed/
 evals/results/*
 !evals/results/.gitkeep
+gigsim/
+*.key
+*.pem
+*.p12
+secrets/
