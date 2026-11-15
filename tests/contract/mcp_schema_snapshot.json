@@ -1,0 +1,270 @@
+{
+  "marketplace": {
+    "create_proposal_draft": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": false,
+        "title": null
+      },
+      "properties": [
+        "cover_letter",
+        "dry_run",
+        "idempotency_key",
+        "job_id",
+        "screening_answers",
+        "trace_id",
+        "user_id"
+      ],
+      "required": [
+        "job_id",
+        "cover_letter",
+        "idempotency_key",
+        "user_id",
+        "trace_id"
+      ]
+    },
+    "get_client_history": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": true,
+        "title": null
+      },
+      "properties": [
+        "client_id",
+        "trace_id",
+        "user_id"
+      ],
+      "required": [
+        "client_id",
+        "user_id",
+        "trace_id"
+      ]
+    },
+    "get_connects_balance": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": true,
+        "title": null
+      },
+      "properties": [
+        "trace_id",
+        "user_id"
+      ],
+      "required": [
+        "user_id",
+        "trace_id"
+      ]
+    },
+    "get_job": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": true,
+        "title": null
+      },
+      "properties": [
+        "job_id",
+        "trace_id",
+        "user_id"
+      ],
+      "required": [
+        "job_id",
+        "user_id",
+        "trace_id"
+      ]
+    },
+    "list_messages": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": true,
+        "title": null
+      },
+      "properties": [
+        "limit",
+        "trace_id",
+        "user_id"
+      ],
+      "required": [
+        "user_id",
+        "trace_id"
+      ]
+    },
+    "search_jobs": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": true,
+        "title": null
+      },
+      "properties": [
+        "limit",
+        "query",
+        "trace_id",
+        "user_id"
+      ],
+      "required": [
+        "user_id",
+        "trace_id"
+      ]
+    },
+    "send_message": {
+      "annotations": {
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": false,
+        "title": null
+      },
+      "properties": [
+        "body",
+        "client_id",
+        "dry_run",
+        "idempotency_key",
+        "trace_id",
+        "user_id"
+      ],
+      "required": [
+        "client_id",
+        "body",
+        "idempotency_key",
+        "user_id",
+        "trace_id"
+      ]
+    },
+    "submit_proposal": {
+      "annotations": {
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": false,
+        "title": null
+      },
+      "properties": [
+        "draft_id",
+        "dry_run",
+        "idempotency_key",
+        "trace_id",
+        "user_id"
+      ],
+      "required": [
+        "draft_id",
+        "idempotency_key",
+        "user_id",
+        "trace_id"
+      ]
+    }
+  },
+  "portfolio": {
+    "get_case_study": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": true,
+        "title": null
+      },
+      "properties": [
+        "id"
+      ],
+      "required": [
+        "id"
+      ]
+    },
+    "list_skills": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": true,
+        "title": null
+      },
+      "properties": [],
+      "required": []
+    },
+    "search_evidence": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": true,
+        "title": null
+      },
+      "properties": [
+        "filters",
+        "k",
+        "requirement"
+      ],
+      "required": [
+        "requirement"
+      ]
+    }
+  },
+  "workspace": {
+    "create_email_draft": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": null,
+        "readOnlyHint": false,
+        "title": null
+      },
+      "properties": [
+        "body",
+        "subject",
+        "to",
+        "user_id"
+      ],
+      "required": [
+        "to",
+        "subject",
+        "body",
+        "user_id"
+      ]
+    },
+    "create_interview_hold": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": false,
+        "title": null
+      },
+      "properties": [
+        "client_id",
+        "slot",
+        "user_id"
+      ],
+      "required": [
+        "slot",
+        "client_id",
+        "user_id"
+      ]
+    },
+    "free_calendar_slots": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null,
+        "readOnlyHint": true,
+        "title": null
+      },
+      "properties": [
+        "date",
+        "user_id"
+      ],
+      "required": [
+        "user_id"
+      ]
+    }
+  }
+}

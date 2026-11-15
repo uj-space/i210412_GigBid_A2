@@ -1,116 +1,102 @@
-"""Portfolio MCP server (read-only)."""
+"""Portfolio MCP server entrypoint (stdio + Streamable HTTP, A1)."""
 from __future__ import annotations
 
-from typing import Any
 import json
-from pathlib import Path
+import os
+from typing import Any
 
 from mcp.server import Server
 from mcp.server.models import InitializationOptions
 import mcp.server.stdio
 import mcp.types as types
 
+from mcp_servers.portfolio.prompts import get_prompt_definitions, render_prompt
+from mcp_servers.portfolio.resources import get_resource_templates, read_portfolio_resource
+from mcp_servers.portfolio.tools import CASES, EVIDENCE, SKILLS, get_tool_definitions, invoke_portfolio_tool, load_data
+
 server = Server("gigbid-portfolio")
-EVIDENCE: list[dict[str, Any]] = []
-CASES: dict[str, dict[str, Any]] = {}
-SKILLS: set[str] = set()
 
 
-def load_data(data_dir: str = "data") -> None:
-    global EVIDENCE, CASES, SKILLS
-    p = Path(data_dir) / "portfolio_items.json"
-    if p.exists():
-        EVIDENCE = json.loads(p.read_text(encoding="utf-8"))
-    for e in EVIDENCE:
-        CASES[e.get("evidence_id", e.get("id", ""))] = e
-        for s in e.get("skills", []) or []:
-            SKILLS.add(s)
+def invoke_tool_sync(name: str, arguments: dict[str, Any]) -> Any:
+    return invoke_portfolio_tool(name, arguments)
 
 
 @server.list_tools()
 async def list_tools() -> list[types.Tool]:
-    return [
-        types.Tool(name="search_evidence", description="Search portfolio evidence.",
-                   inputSchema={"type": "object", "properties": {
-                       "requirement": {"type": "string"}, "k": {"type": "integer", "default": 5},
-                       "filters": {"type": "object", "default": {}}}, "required": ["requirement"]}),
-        types.Tool(name="get_case_study", description="Get a case study by id.",
-                   inputSchema={"type": "object", "properties": {"id": {"type": "string"}},
-                                 "required": ["id"]}),
-        types.Tool(name="list_skills", description="List all portfolio skills.",
-                   inputSchema={"type": "object", "properties": {}}),
-    ]
+    return get_tool_definitions()
 
 
 @server.call_tool()
-async def call_tool(name: str, arguments: dict[str, Any]) -> list[types.TextContent]:
+async def call_tool(name: str, arguments: dict[str, Any]) -> tuple[list[types.TextContent], dict[str, Any]]:
+    res = invoke_portfolio_tool(name, arguments or {})
     if name == "search_evidence":
-        req = (arguments.get("requirement") or "").lower()
-        k = int(arguments.get("k", 5))
-        results = []
-        for e in EVIDENCE:
-            text = (e.get("title", "") + " " + e.get("summary", "") + " "
-                    + " ".join(e.get("skills", []) or [])).lower()
-            if req in text or not req:
-                results.append(e)
-        return [types.TextContent(type="text", text=json.dumps(results[:k]))]
-    if name == "get_case_study":
-        return [types.TextContent(type="text", text=json.dumps(CASES.get(arguments.get("id", ""), {})))]
-    if name == "list_skills":
-        return [types.TextContent(type="text", text=json.dumps(sorted(SKILLS)))]
-    return [types.TextContent(type="text", text=json.dumps({"error": "unknown tool"}))]
+        structured = {"items": res}
+    elif name == "list_skills":
+        structured = {"skills": res}
+    else:
+        structured = res if isinstance(res, dict) else {"result": res}
+    return [types.TextContent(type="text", text=json.dumps(res, default=str))], structured
 
 
 @server.list_resource_templates()
 async def list_resource_templates() -> list[types.ResourceTemplate]:
-    return [
-        types.ResourceTemplate(uriTemplate="portfolio://case/{id}", name="case study",
-                               description="Full case study by id"),
-        types.ResourceTemplate(uriTemplate="portfolio://proposal/{id}", name="proposal",
-                               description="Past proposal by id"),
-    ]
+    return get_resource_templates()
 
 
 @server.read_resource()
 async def read_resource(uri: str) -> str:
-    if uri.startswith("portfolio://case/"):
-        return json.dumps(CASES.get(uri.split("/case/")[-1], {}))
-    if uri.startswith("portfolio://proposal/"):
-        return json.dumps(CASES.get(uri.split("/proposal/")[-1], {}))
-    return json.dumps({"error": "unknown resource"})
+    return read_portfolio_resource(uri)
 
 
 @server.list_prompts()
 async def list_prompts() -> list[types.Prompt]:
-    return [types.Prompt(name="answer_screening_question",
-                         description="Answer a screening question from portfolio evidence.",
-                         arguments=[types.PromptArgument(name="question", required=True),
-                                    types.PromptArgument(name="evidence", required=False)])]
+    return get_prompt_definitions()
 
 
 @server.get_prompt()
-async def get_prompt(name: str, arguments: dict[str, str]) -> types.GetPromptResult:
-    question = arguments.get("question", "")
-    return types.GetPromptResult(
-        description="Screening-question answerer",
-        messages=[types.PromptMessage(role="user",
-                                      content=types.TextContent(
-                                          type="text",
-                                          text=f"Answer using only portfolio evidence: {question}"))])
+async def get_prompt(name: str, arguments: dict[str, str] | None = None) -> types.GetPromptResult:
+    return render_prompt(name, arguments)
+
+
+def create_http_app():
+    from mcp.server.streamable_http_manager import StreamableHTTPSessionManager
+    from starlette.applications import Starlette
+    from starlette.responses import JSONResponse
+    from starlette.routing import Mount, Route
+
+    session_mgr = StreamableHTTPSessionManager(app=server, stateless=True)
+
+    async def health(_request):
+        return JSONResponse({"status": "ok", "server": "gigbid-portfolio"})
+
+    return Starlette(
+        routes=[Route("/health", health), Mount("/mcp", app=session_mgr.handle_request)],
+        lifespan=lambda _app: session_mgr.run(),
+    )
 
 
 async def run_stdio() -> None:
     async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
-        await server.run(read_stream, write_stream,
-                         InitializationOptions(server_name="gigbid-portfolio", server_version="0.1.0",
-                                               capabilities=server.get_capabilities(
-                                                   notification_types=None,
-                                                   experimental_capabilities=None)))
+        await server.run(
+            read_stream,
+            write_stream,
+            InitializationOptions(
+                server_name="gigbid-portfolio",
+                server_version="0.2.0",
+                capabilities=server.get_capabilities(notification_types=None, experimental_capabilities=None),
+            ),
+        )
 
 
 def main() -> None:
-    import asyncio
-    asyncio.run(run_stdio())
+    if os.environ.get("MCP_TRANSPORT") == "http":
+        import uvicorn
+
+        uvicorn.run(create_http_app(), host="0.0.0.0", port=int(os.environ.get("PORT", "8090")))
+    else:
+        import asyncio
+
+        asyncio.run(run_stdio())
 
 
 if __name__ == "__main__":
