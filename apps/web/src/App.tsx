@@ -1,265 +1,844 @@
-import React, { useState, createContext, useContext, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, Link, useParams } from 'react-router-dom'
-import clsx from 'clsx'
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { BrowserRouter, Link, Route, Routes, useNavigate, useParams } from 'react-router-dom';
+import clsx from 'clsx';
+import { apiClient, JobPosting } from './api/client';
+import { DegradedBanner } from './components/DegradedBanner';
+import { EvidenceHover } from './components/EvidenceHover';
 
-const API = {
-  health: () => fetch('/api/health').then(r => r.json()),
-  searchJobs: (q: string, limit = 20) => fetch(`/api/jobs/search?q=${encodeURIComponent(q)}&limit=${limit}`).then(r => r.json()),
-  getJob: (id: string) => fetch(`/api/jobs/${id}`).then(r => r.json()),
-  analyzeJob: (job: any) => fetch('/api/jobs/analyze', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ job }) }).then(r => r.json()),
-  approvalsRespond: (body: any) => fetch('/api/approvals/respond', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(r => r.json()),
-  messagesRespond: (body: any) => fetch('/api/messages/respond', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(r => r.json()),
-  analytics: () => fetch('/api/analytics').then(r => r.json()),
-  connects: () => fetch('/api/connects').then(r => r.json()),
+interface User {
+  id: string;
+  name: string;
+  persona: string;
 }
 
-interface User { id: string; name: string; persona: string }
-interface AuthCtx { user: User | null; login: (n: string, p: string) => void; logout: () => void }
-const AuthCtx = createContext<AuthCtx | null>(null)
-export const useAuth = () => useContext(AuthCtx)!
+interface AuthCtxType {
+  user: User | null;
+  login: (name: string, persona: string) => Promise<void>;
+  logout: () => void;
+}
 
-interface AppCtxType { runningThread: string | null; setRunningThread: (t: string | null) => void }
-const AppCtx = createContext<AppCtxType>({ runningThread: null, setRunningThread: () => {} })
-export const useApp = () => useContext(AppCtx)!
-interface RouteParams { id: string }
-const badge = (v: any) => (v ? <span className="badge">{v}</span> : null)
+const AuthCtx = createContext<AuthCtxType | null>(null);
+const useAuth = () => useContext(AuthCtx)!;
 
-function SignIn({ onLogin }: { onLogin: (n: string, p: string) => void }) {
-  const [name, setName] = useState(''); const [persona, setPersona] = useState('AI/ML Engineer'); const [loading, setLoading] = useState(false)
+function SignIn() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [persona, setPersona] = useState('AI/ML Engineer');
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await login(name || 'Freelancer', persona);
+      navigate('/jobs');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-600 to-blue-500 px-4">
-      <form onSubmit={(e) => { e.preventDefault(); onLogin(name || 'Freelancer', persona); }} className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 space-y-6">
-        <div className="text-center"><h1 className="text-3xl font-bold text-indigo-600">GigBid</h1><p className="text-slate-500 text-sm mt-1">Multi-agent freelancer copilot</p></div>
-        <div className="space-y-4">
-          <input className="input" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" />
-          <select className="input" value={persona} onChange={(e) => setPersona(e.target.value)}><option>AI/ML Engineer</option><option>Full-stack Web Developer</option><option>Data Analyst</option></select>
-          <button className="btn-primary" disabled={loading}>{loading ? 'Signing in…' : 'Enter GigBid'}</button>
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-indigo-700 via-indigo-600 to-blue-500 px-4">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-md space-y-6 rounded-2xl bg-white p-8 shadow-2xl"
+      >
+        <div className="text-center">
+          <h1 className="text-3xl font-bold text-indigo-600">GigBid</h1>
+          <p className="mt-1 text-sm text-slate-500">Multi-agent freelancer copilot</p>
         </div>
-        <p className="text-xs text-slate-400 text-center">Every proposal and message requires your approval before sending.</p>
+        <div className="space-y-4">
+          <input
+            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Your name"
+          />
+          <select
+            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+            value={persona}
+            onChange={(e) => setPersona(e.target.value)}
+          >
+            <option>AI/ML Engineer</option>
+            <option>Full-stack Web Developer</option>
+            <option>Data Analyst</option>
+          </select>
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full rounded-lg bg-indigo-600 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-60"
+          >
+            {loading ? 'Signing in…' : 'Enter GigBid'}
+          </button>
+        </div>
+        <p className="text-center text-xs text-slate-400">
+          Every proposal and message requires your approval before sending.
+        </p>
       </form>
     </div>
-  )
+  );
 }
 
-function Sidebar({ user, runningThread, setRunningThread }: any) {
-  return (
-    <aside className="fixed left-0 top-0 h-full w-64 bg-slate-900 text-white flex flex-col">
-      <div className="p-4"><h1 className="text-xl font-bold text-white">GigBid</h1><p className="text-xs text-slate-400">{user.persona}</p></div>
-      <nav className="flex-1 p-4 space-y-1">
-        <NavLink to="/">Overview</NavLink>
-        <NavLink to="/jobs">Job Inbox</NavLink>
-        <NavLink to="/board">Pipeline</NavLink>
-        <NavLink to="/messages">Messages</NavLink>
-        <NavLink to="/runs">Agent Runs</NavLink>
-        <NavLink to="/analytics">Analytics</NavLink>
-        <NavLink to="/settings">Settings</NavLink>
-      </nav>
-      <div className="p-4 border-t border-slate-700"><div className="text-sm"><span className="block text-xs text-slate-400">User</span><span className="truncate">{user.name}</span></div><button className="mt-2 w-full text-xs border border-slate-600 py-1 rounded text-slate-400 hover:text-white" onClick={() => {}}>Settings</button></div>
-    </aside>
-  )
-}
+function Shell({
+  children,
+  degraded,
+  onRecover,
+}: {
+  children: React.ReactNode;
+  degraded: boolean;
+  onRecover: () => void;
+}) {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  const [connects, setConnects] = useState<number>(80);
 
-function NavLink({ children, to }: any) {
-  const active = window.location.pathname === to
-  return <Link to={to} className={clsx('block px-3 py-2 rounded-md text-sm font-medium', active ? 'bg-indigo-700 text-white' : 'text-slate-300 hover:bg-slate-700')}>{children}</Link>
-}
-
-function Dashboard({ user }: any) { return <div className="space-y-6"><Header /><OverviewCards /></div> }
-function OverviewCards() { const [a] = useState({ jobs: 3, replies: 5, hires: 1, proposals: 7 }); return (
-  <div className="grid gap-4 md:grid-cols-4">
-    <Stat label="Jobs bidding" value={a.jobs} sub="50% hit rate" />
-    <Stat label="Replies" value={a.replies} sub="3 led to interviews" />
-    <Stat label="Hired" value={a.hires} sub="1 was a $900 project" />
-    <Stat label="Proposals sent" value={a.proposals} sub="All human-approved" />
-
-function Header() {
-  const [connects, setConnects] = useState({ balance: 12 })
-  useEffect(() => API.connects().then(setConnects), [])
-  return (
-    <div className="flex flex-wrap items-center justify-between gap-4">
-      <div><h2 className="text-xl font-semibold text-slate-800">Welcome back</h2><p className="text-slate-500 text-sm">GigBid is analysing your pipeline.</p></div>
-      <div className="flex items-center gap-4">
-        <div className="bg-white px-3 py-2 rounded-lg shadow text-sm border"><span className="block text-slate-500 text-xs">Connects</span><span className="font-semibold">{connects.balance}</span></div>
-        <span className="badge bg-emerald-100 text-emerald-700">Live</span>
-      </div>
-    </div>
-  )
-}
-
-function JobInbox({ user }: any) {
-  const [jobs, setJobs] = useState<any[]>([]); const [loading, setLoading] = useState(true)
   useEffect(() => {
-    API.searchJobs('').then(d => setJobs(d.jobs || [])).finally(() => setLoading(false))
-  }, [user])
+    apiClient.getConnects().then((d) => setConnects(d.balance ?? 80)).catch(() => {});
+  }, []);
+
+  const navItems = [
+    { to: '/jobs', label: 'Job Inbox' },
+    { to: '/board', label: 'Pipeline' },
+    { to: '/messages', label: 'Messages' },
+    { to: '/runs', label: 'Agent Runs' },
+    { to: '/analytics', label: 'Analytics' },
+    { to: '/settings', label: 'Settings' },
+  ];
+
   return (
-    <div className="space-y-3">
-      <div className="flex items-center justify-between"><h3 className="text-lg font-semibold">Job Inbox</h3><input className="input w-64" placeholder="Search jobs" /></div>
-      {loading ? <p className="text-slate-500">Loading…</p> : jobs.length === 0 ? <p className="text-slate-500">No jobs found.</p> :
-        <div className="space-y-3">{jobs.map((j: any) => (
-          <div key={j.job_id} className="bg-white rounded-xl border p-4 hover:shadow">
-            <div className="flex items-start justify-between">
-              <div><h4 className="font-semibold">{j.title}</h4><p className="text-xs text-slate-400">Client: {j.client_id}</p></div>
-              <span className={clsx('badge', j.risk_report?.scam ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700')}>{j.risk_report?.scam ? 'SCAM RISK' : 'Review'}</span>
-            </div>
-            <p className="text-sm text-slate-600 mt-2 line-clamp-2">{j.description}</p>
-            <div className="flex flex-wrap gap-2 mt-3 text-xs"><span className="badge bg-indigo-100 text-indigo-700">{j.required_skills?.join(', ')}</span><span className="badge bg-slate-100 text-slate-600">Connects: {j.connects_cost}</span></div>
+    <div className="flex min-h-screen bg-slate-50 text-slate-900">
+      <aside className="fixed left-0 top-0 flex h-full w-60 flex-col bg-slate-900 text-white">
+        <div className="border-b border-slate-800 p-4">
+          <h1 className="text-xl font-bold text-white">GigBid</h1>
+          <p className="text-xs text-slate-400">{user?.persona}</p>
+        </div>
+        <nav className="flex-1 space-y-1 p-3">
+          {navItems.map((item) => {
+            const active = window.location.pathname.startsWith(item.to);
+            return (
+              <Link
+                key={item.to}
+                to={item.to}
+                className={clsx(
+                  'block rounded-lg px-3 py-2 text-sm font-medium transition',
+                  active ? 'bg-indigo-600 text-white' : 'text-slate-300 hover:bg-slate-800'
+                )}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+        <div className="border-t border-slate-800 p-4 text-xs">
+          <div className="mb-2 flex items-center justify-between text-slate-300">
+            <span>Connects</span>
+            <span className="rounded bg-slate-800 px-2 py-0.5 font-semibold text-emerald-400">{connects}</span>
           </div>
-        ))}</div>}
+          <div className="mb-2 truncate text-slate-400">{user?.name}</div>
+          <button
+            onClick={() => {
+              logout();
+              navigate('/');
+            }}
+            className="w-full rounded-md border border-slate-700 py-1.5 text-slate-300 hover:bg-slate-800 hover:text-white"
+          >
+            Sign Out
+          </button>
+        </div>
+      </aside>
+      <main className="ml-60 flex-1 p-6">
+        <DegradedBanner degraded={degraded} onRecover={onRecover} />
+        {children}
+      </main>
     </div>
-  )
+  );
 }
 
-function JobDetail({ user }: any) {
-  const { id } = useParams() as RouteParams
-  const [job, setJob] = useState<any>(null); const [detail, setDetail] = useState<any>(null)
-  useEffect(() => {
-    if (id) {
-      API.getJob(id).then(setJob).catch(() => {})
+function JobInbox({
+  analysisMap,
+  setAnalysisMap,
+}: {
+  analysisMap: Record<string, any>;
+  setAnalysisMap: React.Dispatch<React.SetStateAction<Record<string, any>>>;
+}) {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const [jobs, setJobs] = useState<JobPosting[]>([]);
+  const [query, setQuery] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [analyzingId, setAnalyzingId] = useState<string | null>(null);
 
-function ProposalStudio() {
-  const { id } = useParams() as RouteParams
-  const [proposal, setProposal] = useState<any>(null); const [approved, setApproved] = useState(false)
-  useEffect(() => { setProposal({ cover_letter: 'Draft cover letter citing evidence.', status: 'pending_review' }) }, [id])
+  const loadJobs = (q = '') => {
+    setLoading(true);
+    apiClient
+      .searchJobs(q, 25)
+      .then((d) => setJobs(d.jobs || []))
+      .catch(() => setJobs([]))
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    loadJobs('');
+  }, []);
+
+  const handleAnalyze = async (job: JobPosting) => {
+    setAnalyzingId(job.job_id);
+    try {
+      const res = await apiClient.analyzeJob(job, user?.id || 'default');
+      setAnalysisMap((prev) => ({ ...prev, [job.job_id]: res }));
+      navigate(`/jobs/${job.job_id}`);
+    } finally {
+      setAnalyzingId(null);
+    }
+  };
+
   return (
-    <div className="max-w-4xl space-y-4">
-      <h3 className="text-xl font-semibold">Proposal Studio</h3>
-      <div className="bg-white rounded-xl border p-4">
-        <div className="h-2 bg-slate-200 rounded mb-2 w-full" />
-        <textarea className="input h-32" value={proposal?.cover_letter || ''} onChange={() => {}} placeholder="Cover letter" />
-        <div className="flex flex-wrap gap-2 mt-2 text-xs">
-          <span className="badge bg-indigo-100 text-indigo-700">Evidence: [EVD-1], [EVD-3]</span>
-          <span className="badge bg-slate-100 text-slate-600">Critic: grounded, personalised</span>
-          <span className="badge bg-slate-100 text-slate-600">Compliance: passed</span>
+    <div className="space-y-4">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h2 className="text-2xl font-bold text-slate-800">Job Inbox</h2>
+          <p className="text-sm text-slate-500">Real-time marketplace opportunities scored for your persona.</p>
         </div>
-        <div className="mt-2 text-sm text-slate-600"><b>Dry run:</b> sends proposal via GigSim, costs 8 connects.</div>
-        <div className="flex gap-2 mt-3">
-          <button className="btn-primary" onClick={() => setApproved(true)}>Approve</button>
-          <button className="btn-secondary" onClick={() => {}}>Reject</button>
-          <button className="btn-secondary" onClick={() => {}}>Regenerate paragraph</button>
+        <div className="flex gap-2">
+          <input
+            className="w-64 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm"
+            placeholder="Search jobs..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button
+            onClick={() => loadJobs(query)}
+            className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+          >
+            Search
+          </button>
         </div>
-        {approved && <p className="mt-2 text-emerald-600 font-medium">Proposal submitted to marketplace as a draft.</p>}
+      </div>
+
+      {loading ? (
+        <p className="text-sm text-slate-500">Loading jobs…</p>
+      ) : jobs.length === 0 ? (
+        <p className="text-sm text-slate-500">No matching jobs found.</p>
+      ) : (
+        <div className="space-y-3">
+          {jobs.map((j) => {
+            const analyzed = analysisMap[j.job_id];
+            return (
+              <div
+                key={j.job_id}
+                className="flex flex-wrap items-start justify-between gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
+              >
+                <div className="max-w-2xl space-y-1.5">
+                  <Link
+                    to={`/jobs/${j.job_id}`}
+                    className="text-base font-semibold text-indigo-700 hover:underline"
+                  >
+                    {j.title}
+                  </Link>
+                  <p className="line-clamp-2 text-sm text-slate-600">{j.description}</p>
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {(j.required_skills || []).map((sk) => (
+                      <span key={sk} className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-700">
+                        {sk}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex flex-col items-end gap-2 text-right">
+                  <span className="text-sm font-semibold text-slate-800">
+                    ${j.budget?.min ?? 0}–${j.budget?.max ?? 0}
+                  </span>
+                  <span className="text-xs text-slate-500">{j.connects_cost} Connects</span>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => handleAnalyze(j)}
+                      disabled={analyzingId === j.job_id}
+                      className="rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-indigo-700"
+                    >
+                      {analyzingId === j.job_id ? 'Analyzing…' : analyzed ? 'Re-Analyze' : 'Analyze & Draft'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function JobDetail({
+  analysisMap,
+  setAnalysisMap,
+}: {
+  analysisMap: Record<string, any>;
+  setAnalysisMap: React.Dispatch<React.SetStateAction<Record<string, any>>>;
+}) {
+  const { id } = useParams();
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const [job, setJob] = useState<JobPosting | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [running, setRunning] = useState(false);
+
+  const analysis = id ? analysisMap[id] : null;
+
+  useEffect(() => {
+    if (!id) return;
+    setLoading(true);
+    apiClient
+      .getJob(id)
+      .then(setJob)
+      .catch(() => setJob(null))
+      .finally(() => setLoading(false));
+  }, [id]);
+
+  const runAnalysis = async () => {
+    if (!job) return;
+    setRunning(true);
+    try {
+      const res = await apiClient.analyzeJob(job, user?.id || 'default');
+      setAnalysisMap((prev) => ({ ...prev, [job.job_id]: res }));
+    } finally {
+      setRunning(false);
+    }
+  };
+
+  if (loading) return <p className="text-sm text-slate-500">Loading job…</p>;
+  if (!job) return <p className="text-sm text-rose-600">Job not found.</p>;
+
+  const res = analysis?.result || {};
+  const risk = res.risk_report || {};
+  const fit = res.fit_report || {};
+  const price = res.price_quote || {};
+
+  return (
+    <div className="space-y-6">
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 className="text-2xl font-bold text-slate-800">Job Detail</h2>
+          <p className="text-sm text-slate-600">{job.title}</p>
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={runAnalysis}
+            disabled={running}
+            className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+          >
+            {running ? 'Running Agents…' : analysis ? 'Re-run Multi-Agent Analysis' : 'Run Multi-Agent Analysis'}
+          </button>
+          {analysis && (
+            <button
+              onClick={() => navigate(`/proposals/${job.job_id}`)}
+              className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700"
+            >
+              Open Proposal Studio
+            </button>
+          )}
+        </div>
+      </div>
+
+      <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <h3 className="font-semibold text-slate-800">Job Description</h3>
+        <p className="mt-2 whitespace-pre-wrap text-sm text-slate-600">{job.description}</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {(job.required_skills || []).map((s) => (
+            <span key={s} className="rounded-full bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700">
+              {s}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {analysis && (
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="text-xs font-medium uppercase text-slate-400">Decision</div>
+            <div className="mt-1 text-xl font-bold uppercase text-indigo-700">{res.decision || 'N/A'}</div>
+            <div className="mt-1 text-xs text-slate-500">Thread: {analysis.thread_id}</div>
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="text-xs font-medium uppercase text-slate-400">Fit & Risk</div>
+            <div className="mt-1 text-sm">Fit Score: <strong>{fit.score ?? '—'}</strong></div>
+            <div className="text-sm">Client Quality: <strong>{risk.score ?? '—'}</strong></div>
+            {risk.scam && <span className="mt-1 inline-block rounded bg-rose-100 px-2 py-0.5 text-xs font-semibold text-rose-700">SCAM FLAGGED</span>}
+          </div>
+          <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="text-xs font-medium uppercase text-slate-400">Price Quote</div>
+            <div className="mt-1 text-xl font-bold text-emerald-700">${price.suggested_bid ?? 0}</div>
+            <div className="mt-1 text-xs text-slate-500">{price.rationale}</div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ProposalStudio({
+  analysisMap,
+  setAnalysisMap,
+}: {
+  analysisMap: Record<string, any>;
+  setAnalysisMap: React.Dispatch<React.SetStateAction<Record<string, any>>>;
+}) {
+  const { id } = useParams();
+  const analysis = id ? analysisMap[id] : null;
+  const res = analysis?.result || {};
+  const draft = res.proposal_draft || {};
+  const [coverLetter, setCoverLetter] = useState(draft.cover_letter || '');
+  const [rejectReason, setRejectReason] = useState('');
+  const [statusMsg, setStatusMsg] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    setCoverLetter(draft.cover_letter || '');
+  }, [draft.cover_letter]);
+
+  if (!id || !analysis) {
+    return (
+      <div className="space-y-3">
+        <h2 className="text-2xl font-bold">Proposal Studio</h2>
+        <p className="text-sm text-slate-500">No active analysis for this job yet. Run analysis from Job Detail first.</p>
+      </div>
+    );
+  }
+
+  const evidenceList: any[] = res.evidence || [];
+  const evidenceMap = Object.fromEntries(evidenceList.map((e) => [e.evidence_id, e]));
+  const verifications: any[] = res.claim_verification || [];
+  const compliance = res.compliance_verdict || { passed: true, violations: [] };
+
+  const handleAction = async (action: 'approved' | 'edited' | 'rejected') => {
+    setSubmitting(true);
+    try {
+      const resp = await apiClient.respondApproval({
+        thread_id: analysis.thread_id,
+        action,
+        edit: action === 'edited' ? { cover_letter: coverLetter } : undefined,
+        reason: action === 'rejected' ? rejectReason || 'Rejected by user' : undefined,
+      });
+      setStatusMsg(`Approval status: ${resp.approval_status}`);
+      setAnalysisMap((prev) => ({
+        ...prev,
+        [id]: { ...prev[id], needs_approval: false, result: resp.result },
+      }));
+    } catch (err: any) {
+      setStatusMsg(`Error: ${err.message}`);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold text-slate-800">Proposal Studio</h2>
+          <p className="text-sm text-slate-500">Thread {analysis.thread_id} · Grounded claim-by-claim review</p>
+        </div>
+        <span
+          className={clsx(
+            'rounded-full px-3 py-1 text-xs font-semibold',
+            compliance.passed ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'
+          )}
+        >
+          {compliance.passed ? 'Compliance Passed' : 'Compliance Violation'}
+        </span>
+      </div>
+
+      {statusMsg && (
+        <div className="rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm text-indigo-800">
+          {statusMsg}
+        </div>
+      )}
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          <h3 className="font-semibold text-slate-800">Cover Letter Draft</h3>
+          <textarea
+            rows={11}
+            value={coverLetter}
+            onChange={(e) => setCoverLetter(e.target.value)}
+            className="w-full rounded-lg border border-slate-300 p-3 text-sm focus:border-indigo-500 focus:outline-none"
+          />
+          <div className="flex flex-wrap gap-2">
+            <button
+              disabled={submitting}
+              onClick={() => handleAction('approved')}
+              className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700"
+            >
+              Approve & Submit
+            </button>
+            <button
+              disabled={submitting}
+              onClick={() => handleAction('edited')}
+              className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+            >
+              Save Edit & Submit
+            </button>
+          </div>
+          <div className="flex gap-2 pt-2">
+            <input
+              className="flex-1 rounded-lg border border-slate-300 px-3 py-1.5 text-sm"
+              placeholder="Rejection reason..."
+              value={rejectReason}
+              onChange={(e) => setRejectReason(e.target.value)}
+            />
+            <button
+              disabled={submitting}
+              onClick={() => handleAction('rejected')}
+              className="rounded-lg bg-rose-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-rose-700"
+            >
+              Reject
+            </button>
+          </div>
+        </div>
+
+        <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          <h3 className="font-semibold text-slate-800">Claim-by-Claim Verification (Hover for Evidence)</h3>
+          <div className="space-y-2">
+            {verifications.length === 0 ? (
+              <p className="text-sm text-slate-500">No claim verification records available.</p>
+            ) : (
+              verifications.map((v, idx) => (
+                <EvidenceHover key={idx} item={v} evidenceMap={evidenceMap} />
+              ))
+            )}
+          </div>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
 function PipelineBoard() {
-  const [cards, setCards] = useState([{ id: 1, title: 'Churn baseline job', status: 'drafted' as const }, { id: 2, title: 'Dashboard trial', status: 'submitted' as const }, { id: 3, title: 'Data pipeline', status: 'interview' as const }])
-  const columns = ['drafted', 'submitted', 'viewed', 'replied', 'interview', 'hired', 'lost']
-  return (
-    <div><h3 className="text-xl font-semibold mb-3">Pipeline Board</h3><div className="flex gap-3 overflow-x-auto">{columns.map(c => (
-      <div key={c} className="flex-shrink-0 w-44 bg-white rounded-xl border p-3"><div className="text-xs font-semibold text-slate-500 mb-2">{c}</div><div className="space-y-2">{cards.filter(cd => cd.status === c).map(cd => <div key={cd.id} className="text-sm bg-slate-50 rounded p-2">{cd.title}</div>)}</div>
+  const [cards, setCards] = useState<any[]>([]);
+  useEffect(() => {
+    apiClient.getPipeline().then((d) => setCards(d.cards || [])).catch(() => {});
+  }, []);
 
-function RunViewer() {
-  const [runs, setRuns] = useState([{ thread_id: 'thread-a1b2c3d4', status: 'interrupted (awaiting approval)', progress: 8 }])
+  const columns = ['drafted', 'submitted', 'interview', 'won', 'lost'];
   return (
-    <div><h3 className="text-xl font-semibold mb-3">Agent Run Viewer</h3><div className="space-y-3">{runs.map(r => <div key={r.thread_id} className="bg-white rounded-xl border p-3"><div className="flex justify-between text-sm"><span className="font-mono">{r.thread_id}</span><span className="badge">{r.status}</span></div><div className="mt-1 h-2 bg-slate-200 rounded w-full" /></div>)}</div></div>
-  )
+    <div className="space-y-4">
+      <h2 className="text-2xl font-bold text-slate-800">Pipeline Board</h2>
+      <div className="grid gap-4 md:grid-cols-5">
+        {columns.map((col) => (
+          <div key={col} className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+            <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-500">{col}</h3>
+            <div className="space-y-2">
+              {cards
+                .filter((c) => c.status === col)
+                .map((c) => (
+                  <Link
+                    key={c.id}
+                    to={`/proposals/${c.id}`}
+                    className="block rounded-lg border border-slate-200 bg-slate-50 p-2.5 text-xs hover:border-indigo-400"
+                  >
+                    <div className="font-semibold text-slate-800">{c.title}</div>
+                    <div className="mt-1 text-slate-500">Fit: {c.fit_score}</div>
+                  </Link>
+                ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function MessagesInbox() {
+  const [messages, setMessages] = useState<any[]>([]);
+  const [replyState, setReplyState] = useState<any>(null);
+  const [draftBody, setDraftBody] = useState('');
+
+  useEffect(() => {
+    apiClient.getMessages().then((d) => setMessages(d.messages || [])).catch(() => {});
+  }, []);
+
+  const draftReply = async (m: any) => {
+    const res = await apiClient.respondMessage(m);
+    setReplyState(res);
+    setDraftBody(res?.result?.reply_draft?.body || '');
+  };
+
+  const approveReply = async (action: 'approved' | 'rejected') => {
+    if (!replyState?.thread_id) return;
+    await apiClient.approveMessage(replyState.thread_id, action, draftBody);
+    setReplyState(null);
+  };
+
+  return (
+    <div className="space-y-4">
+      <h2 className="text-2xl font-bold text-slate-800">Messages Inbox</h2>
+      <div className="grid gap-4 lg:grid-cols-2">
+        <div className="space-y-3">
+          {messages.map((m, i) => (
+            <div key={i} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="text-xs font-semibold text-indigo-600">Client {m.client_id}</div>
+              <p className="mt-1 text-sm text-slate-700">{m.body}</p>
+              <button
+                onClick={() => draftReply(m)}
+                className="mt-2 rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-medium text-white"
+              >
+                Draft AI Reply
+              </button>
+            </div>
+          ))}
+        </div>
+        {replyState && (
+          <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <h3 className="font-semibold">Reply Approval Gate ({replyState.result?.intent})</h3>
+            <textarea
+              rows={6}
+              value={draftBody}
+              onChange={(e) => setDraftBody(e.target.value)}
+              className="w-full rounded-lg border border-slate-300 p-2 text-sm"
+            />
+            <div className="flex gap-2">
+              <button
+                onClick={() => approveReply('approved')}
+                className="rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white"
+              >
+                Approve & Send
+              </button>
+              <button
+                onClick={() => approveReply('rejected')}
+                className="rounded-lg bg-rose-600 px-3 py-1.5 text-xs font-medium text-white"
+              >
+                Reject
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function AgentRuns() {
+  const [runs, setRuns] = useState<any[]>([]);
+  const [events, setEvents] = useState<string[]>([]);
+  const [activeThread, setActiveThread] = useState<string | null>(null);
+
+  useEffect(() => {
+    apiClient.getRuns().then((d) => setRuns(d.runs || [])).catch(() => {});
+  }, []);
+
+  const streamRun = (threadId: string) => {
+    setActiveThread(threadId);
+    setEvents([]);
+    const es = new EventSource(`/api/runs/${threadId}/stream`);
+    es.onmessage = (ev) => {
+      setEvents((prev) => [...prev, ev.data]);
+    };
+    es.addEventListener('done', () => es.close());
+    es.onerror = () => es.close();
+  };
+
+  return (
+    <div className="space-y-4">
+      <h2 className="text-2xl font-bold text-slate-800">Agent Runs & Traces</h2>
+      <div className="grid gap-4 lg:grid-cols-2">
+        <div className="space-y-2">
+          {runs.length === 0 ? (
+            <p className="text-sm text-slate-500">No runs recorded yet.</p>
+          ) : (
+            runs.map((r) => (
+              <div key={r.thread_id} className="flex items-center justify-between rounded-xl border bg-white p-3 text-sm">
+                <div>
+                  <div className="font-semibold">{r.title || r.job_id}</div>
+                  <div className="text-xs text-slate-500">{r.thread_id} · {r.status}</div>
+                </div>
+                <button
+                  onClick={() => streamRun(r.thread_id)}
+                  className="rounded bg-indigo-600 px-3 py-1 text-xs text-white"
+                >
+                  Stream SSE
+                </button>
+              </div>
+            ))
+          )}
+        </div>
+        <div className="rounded-xl border bg-slate-900 p-4 font-mono text-xs text-emerald-300">
+          <div className="mb-2 text-slate-400">Live SSE Stream {activeThread ? `(${activeThread})` : ''}</div>
+          {events.map((e, i) => (
+            <div key={i}>{e}</div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function Analytics() {
-  const [a, setA] = useState({ replyRate: 0.4, hireRate: 0.08, connects: 13, p95Latency: 8.2, costPerProposal: 0.04 })
-  useEffect(() => API.analytics().then(setA), [])
-  return (
-    <div><h3 className="text-xl font-semibold mb-3">Analytics</h3><div className="grid gap-4 md:grid-cols-2">
-      <div className="bg-white rounded-xl p-4 border"><div className="text-2xl font-bold">{Math.round(a.replyRate * 100)}%</div><div className="text-xs text-slate-500">Reply rate</div></div>
-      <div className="bg-white rounded-xl p-4 border"><div className="text-2xl font-bold">{Math.round(a.hireRate * 100)}%</div><div className="text-xs text-slate-500">Hire rate</div></div>
-      <div className="bg-white rounded-xl p-4 border"><div className="text-2xl font-bold">{a.connects}</div><div className="text-xs text-slate-500">Connects spent</div></div>
-      <div className="bg-white rounded-xl p-4 border"><div className="text-2xl font-bold">{a.p95Latency.toFixed(1)}s</div><div className="text-xs text-slate-500">p95 latency / proposal</div></div>
-    </div>
-    <p className="text-xs text-slate-400 mt-3">p95 latency {a.p95Latency}s, cost ${a.costPerProposal}/proposal (open-profile model).</p></div>
-  )
-}
+  const [data, setData] = useState<any>(null);
+  useEffect(() => {
+    apiClient.getAnalytics().then(setData).catch(() => {});
+  }, []);
 
-function Settings() {
-  const [auth, setAuth] = useState({ name: 'Freelancer', persona: 'AI/ML Engineer' })
-  return (
-    <div><h3 className="text-xl font-semibold mb-3">Settings</h3><div className="max-w-md space-y-3">
-      <div className="bg-white rounded-xl p-4 border"><label className="text-sm font-medium">Name</label><input className="input mt-1" value={auth.name} onChange={e => setAuth({ ...auth, name: e.target.value })} /></div>
-      <div className="bg-white rounded-xl p-4 border"><label className="text-sm font-medium">Persona</label><select className="input mt-1" value={auth.persona} onChange={e => setAuth({ ...auth, persona: e.target.value })}><option>AI/ML Engineer</option><option>Full-stack Web Developer</option><option>Data Analyst</option></select></div>
-      <div className="bg-white rounded-xl p-4 border"><div className="flex items-center justify-between"><span>Autonomy level</span><span className="badge bg-slate-100 text-slate-600">Review every proposal</span></div><input type="range" className="mt-2" defaultValue={0} min={0} max={1} /><p className="text-xs text-slate-400 mt-1">Auto-skip low-fit jobs only; never auto-send.</p></div>
-      <button className="btn-primary">Save settings</button>
-    </div></div>
-  )
-}
-
-// ---------------------------------------------------------------- App composer
-export default function App() {
-  const [user, setUser] = useState<User | null>(null)
-  const [runningThread, setRunningThread] = useState<string | null>(null)
-  const login = (name: string, persona: string) => {
-    const u: User = { id: crypto.randomUUID(), name, persona }
-    localStorage.setItem('gigbid_user', JSON.stringify(u)); setUser(u)
-  }
-  const logout = () => { localStorage.removeItem('gigbid_user'); setUser(null) }
-  const value = { user, login, logout }
-  const appValue = { runningThread, setRunningThread }
-  return (
-    <AuthCtx.Provider value={value}>
-      <AppCtx.Provider value={appValue}>
-        <BrowserRouter>
-          <div className="min-h-screen bg-slate-50 text-slate-800">
-            {!user ? <SignIn onLogin={login} /> : (
-              <div className="flex min-h-screen">
-                <Sidebar user={user} runningThread={runningThread} setRunningThread={setRunningThread} />
-                <main className="flex-1 lg:ml-64 pb-16">
-                  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-                    <Routes>
-                      <Route path="/" element={<Dashboard user={user} />} />
-                      <Route path="/jobs" element={<JobInbox user={user} />} />
-                      <Route path="/jobs/:id" element={<JobDetail user={user} />} />
-                      <Route path="/proposals/:id" element={<ProposalStudio />} />
-                      <Route path="/messages" element={<Messages user={user} />} />
-                      <Route path="/board" element={<PipelineBoard />} />
-                      <Route path="/analytics" element={<Analytics />} />
-                      <Route path="/settings" element={<Settings />} />
-                      <Route path="/runs" element={<RunViewer />} />
-                    </Routes>
-                  </div>
-                </main>
-              </div>
-            )}
-          </div>
-        </BrowserRouter>
-      </AppCtx.Provider>
-    </AuthCtx.Provider>
-  )
-}
-
-    ))}</div></div>
-  )
-}
-
-function Messages({ user }: any) {
-  const [msgs, setMsgs] = useState([{ role: 'client', text: 'Do you have capacity this week? React with availability.' }, { role: 'ai', text: 'Thanks for reaching out. I have capacity next week — two tentative slots.' }])
-  const send = (e: any) => { e.preventDefault(); setMsgs([...msgs, { role: 'client', text: e.target.text.value }]); e.target.value = '' }
-  return (
-    <div className="max-w-2xl space-y-3">
-      <h3 className="text-xl font-semibold">Messages</h3>
-      {msgs.map(m => <div key={m.role + m.text} className={clsx('rounded-xl p-3', m.role === 'client' ? 'bg-slate-100' : 'bg-indigo-50 text-indigo-800')}>{m.text}</div>)}
-      <form onSubmit={send} className="flex gap-2 mt-2"><input className="input flex-1" name="text" placeholder="Draft a reply (suggested replies shown; approve before send)" /><button className="btn-primary">Send (requires approval)</button></form>
-    </div>
-  )
-}
-
-      API.analyzeJob({ job_id: id, title: '', description: '', required_skills: [], budget: { min: 0, max: 0 } }).then(setDetail).catch(() => {})
-    }
-  }, [id])
-  if (!job) return <p className="text-slate-500">Loading job…</p>
   return (
     <div className="space-y-4">
-      <div className="flex items-start justify-between"><h3 className="text-xl font-semibold">{job.title}</h3><span className="badge bg-slate-100 text-slate-600">{job.job_id}</span></div>
-      <p className="text-slate-600">{job.description}</p>
-      <div className="grid md:grid-cols-2 gap-4">
-        <div className="bg-white rounded-xl p-4 border"><h4 className="font-semibold">Job Spec</h4><ul className="text-sm text-slate-600 space-y-1"><li className="grid grid-cols-2 gap-2"><span className="text-slate-400">Skills:</span><span className="font-mono">{job.required_skills?.join(', ')}</span></li><li className="grid grid-cols-2 gap-2"><span className="text-slate-400">Budget:</span><span className="font-mono">{job.budget_min}–{job.budget_max} {job.currency}</span></li><li className="grid grid-cols-2 gap-2"><span className="text-slate-400">Connects:</span><span className="font-mono">{job.connects_cost}</span></li></ul></div>
-        <div className="bg-white rounded-xl p-4 border"><h4 className="font-semibold">Risk Report</h4><div>{badge(job.risk_report?.scam ? 'SCAM' : 'Low risk')}</div><p className="text-sm text-slate-600 mt-1">{job.risk_report?.explanation}</p></div>
-      </div>
-      {detail && (
-        <div className="bg-white rounded-xl p-4 border"><h4 className="font-semibold">Analysis Results</h4><p className="text-sm text-slate-600 mt-1"><b>Decision:</b> {detail.decision} | <b>Price:</b> {detail.price_quote?.suggested_bid} {detail.price_quote?.currency}</p></div>
+      <h2 className="text-2xl font-bold text-slate-800">Analytics</h2>
+      {data && (
+        <div className="grid gap-4 md:grid-cols-4">
+          <div className="rounded-xl border bg-white p-4 shadow-sm">
+            <div className="text-xs text-slate-500">Reply Rate</div>
+            <div className="text-2xl font-bold text-indigo-700">{(data.replyRate * 100).toFixed(0)}%</div>
+          </div>
+          <div className="rounded-xl border bg-white p-4 shadow-sm">
+            <div className="text-xs text-slate-500">Hire Rate</div>
+            <div className="text-2xl font-bold text-emerald-700">{(data.hireRate * 100).toFixed(0)}%</div>
+          </div>
+          <div className="rounded-xl border bg-white p-4 shadow-sm">
+            <div className="text-xs text-slate-500">Connects Spent</div>
+            <div className="text-2xl font-bold text-slate-800">{data.connects}</div>
+          </div>
+          <div className="rounded-xl border bg-white p-4 shadow-sm">
+            <div className="text-xs text-slate-500">RAG Recall@5 (V8)</div>
+            <div className="text-2xl font-bold text-indigo-700">
+              {data.eval_summary?.rag_best_recall_at_5 ?? '1.0'}
+            </div>
+          </div>
+        </div>
       )}
     </div>
-  )
+  );
 }
 
-  </div>
-) }
+function Settings({
+  degraded,
+  onToggleDegraded,
+}: {
+  degraded: boolean;
+  onToggleDegraded: (flag: boolean) => void;
+}) {
+  const { user } = useAuth();
+  const [variant, setVariant] = useState('v8');
+  const [floor, setFloor] = useState(40);
+  const [memory, setMemory] = useState<any>({ style: [], outcome: [] });
+
+  useEffect(() => {
+    apiClient.getSettings().then((s) => {
+      if (s.rag_variant) setVariant(s.rag_variant);
+      if (s.rate_floor) setFloor(s.rate_floor);
+    }).catch(() => {});
+    apiClient.getMemory(user?.id || 'default').then(setMemory).catch(() => {});
+  }, [user?.id]);
+
+  return (
+    <div className="space-y-6">
+      <h2 className="text-2xl font-bold text-slate-800">Settings</h2>
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="space-y-3 rounded-xl border bg-white p-5 shadow-sm">
+          <h3 className="font-semibold">Agent & RAG Configuration</h3>
+          <label className="block text-xs text-slate-500">Active RAG Variant</label>
+          <select
+            value={variant}
+            onChange={(e) => setVariant(e.target.value)}
+            className="w-full rounded-lg border px-3 py-2 text-sm"
+          >
+            {['v0', 'v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9'].map((v) => (
+              <option key={v} value={v}>{v.toUpperCase()}</option>
+            ))}
+          </select>
+          <label className="block text-xs text-slate-500">Hourly Rate Floor ($)</label>
+          <input
+            type="number"
+            value={floor}
+            onChange={(e) => setFloor(Number(e.target.value))}
+            className="w-full rounded-lg border px-3 py-2 text-sm"
+          />
+          <div className="flex gap-2">
+            <button
+              onClick={() => apiClient.updateSettings({ rag_variant: variant, rate_floor: floor })}
+              className="rounded-lg bg-indigo-600 px-4 py-2 text-xs font-medium text-white"
+            >
+              Save Settings
+            </button>
+            <button
+              onClick={() => onToggleDegraded(!degraded)}
+              className="rounded-lg border border-amber-400 px-4 py-2 text-xs font-medium text-amber-800"
+            >
+              {degraded ? 'Disable Degraded Mode' : 'Simulate Marketplace Outage'}
+            </button>
+          </div>
+        </div>
+
+        <div className="space-y-3 rounded-xl border bg-white p-5 shadow-sm">
+          <div className="flex items-center justify-between">
+            <h3 className="font-semibold">Long-Term Memory (Style & Outcome)</h3>
+            <button
+              onClick={() => apiClient.deleteMemory(user?.id || 'default').then(() => setMemory({ style: [], outcome: [] }))}
+              className="text-xs text-rose-600 hover:underline"
+            >
+              Clear Memory
+            </button>
+          </div>
+          <div className="text-xs text-slate-600">
+            <strong>Style Rules:</strong> {(memory.style || []).length}
+          </div>
+          <div className="text-xs text-slate-600">
+            <strong>Outcome Records:</strong> {(memory.outcome || []).length}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
+  const [user, setUser] = useState<User | null>(null);
+  const [degraded, setDegraded] = useState(false);
+  const [analysisMap, setAnalysisMap] = useState<Record<string, any>>({});
+
+  useEffect(() => {
+    apiClient
+      .health()
+      .then((h) => setDegraded(Boolean(h.marketplace_degraded)))
+      .catch(() => setDegraded(true));
+  }, []);
+
+  const login = async (name: string, persona: string) => {
+    const res = await apiClient.login(name, persona);
+    localStorage.setItem('gigbid_token', res.token);
+    setUser(res.user);
+  };
+
+  const logout = () => {
+    localStorage.removeItem('gigbid_token');
+    setUser(null);
+  };
+
+  const toggleDegraded = async (flag: boolean) => {
+    await apiClient.toggleDegraded(flag);
+    setDegraded(flag);
+  };
+
+  return (
+    <AuthCtx.Provider value={{ user, login, logout }}>
+      <BrowserRouter>
+        {!user ? (
+          <Routes>
+            <Route path="*" element={<SignIn />} />
+          </Routes>
+        ) : (
+          <Shell degraded={degraded} onRecover={() => toggleDegraded(false)}>
+            <Routes>
+              <Route path="/" element={<JobInbox analysisMap={analysisMap} setAnalysisMap={setAnalysisMap} />} />
+              <Route path="/jobs" element={<JobInbox analysisMap={analysisMap} setAnalysisMap={setAnalysisMap} />} />
+              <Route path="/jobs/:id" element={<JobDetail analysisMap={analysisMap} setAnalysisMap={setAnalysisMap} />} />
+              <Route path="/proposals/:id" element={<ProposalStudio analysisMap={analysisMap} setAnalysisMap={setAnalysisMap} />} />
+              <Route path="/board" element={<PipelineBoard />} />
+              <Route path="/messages" element={<MessagesInbox />} />
+              <Route path="/runs" element={<AgentRuns />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/settings" element={<Settings degraded={degraded} onToggleDegraded={toggleDegraded} />} />
+            </Routes>
+          </Shell>
+        )}
+      </BrowserRouter>
+    </AuthCtx.Provider>
+  );
+}
