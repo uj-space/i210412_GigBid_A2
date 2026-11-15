@@ -10,5 +10,8 @@ node_modules/
 dist/
 build/
 data/processed/
+data/raw/
+gigbid-starter-kit/data/processed/
+gigbid-starter-kit/data/raw/
 evals/results/*
 !evals/results/.gitkeep

@@ -1,0 +1,6 @@
+agent.state: OK
+agent.handoffs: OK
+agent.nodes.scout: OK
+agent.graphs.bid_graph: OK
+agent.graphs.conversation_graph: OK
+agent.memory.promotion_rules: OK
