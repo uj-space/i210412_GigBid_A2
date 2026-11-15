@@ -1,6 +1,8 @@
 {
-  "total": 4,
-  "real": 0,
+  "total": 7004,
+  "real": 7000,
   "synthetic": 4,
-  "by_source": {}
+  "by_source": {
+    "root_level_files": 7000
+  }
 }

@@ -52,6 +52,9 @@ def _parse_budget(text: Any) -> dict:
     return result
 
 
+MAX_ROWS_PER_FILE = 1000
+
+
 def process_upwork_jobs_2024(raw_dir: Path) -> list[dict]:
     jobs = []
     csv_files = list(raw_dir.glob("*.csv")) + list(raw_dir.glob("*.json"))
@@ -60,7 +63,9 @@ def process_upwork_jobs_2024(raw_dir: Path) -> list[dict]:
             if csv_file.suffix == ".csv":
                 with open(csv_file, encoding="utf-8", errors="ignore") as f:
                     reader = csv.DictReader(f)
-                    for row in reader:
+                    for i, row in enumerate(reader):
+                        if i >= MAX_ROWS_PER_FILE:
+                            break
                         job = _normalize_job(row, source="kaggle_upwork_2024")
                         if job:
                             jobs.append(job)
@@ -148,23 +153,36 @@ def _normalize_job(row: dict, source: str = "unknown") -> dict | None:
 def process_all_kaggle() -> dict:
     all_jobs = []
     stats = {"total": 0, "real": 0, "synthetic": 0, "by_source": {}}
-    
-    RAW_DIR.mkdir(parents=True, exist_ok=True)
-    kaggle_dirs = [d for d in RAW_DIR.iterdir() if d.is_dir()]
 
-    if not kaggle_dirs:
-        print("[WARN] No Kaggle datasets found in " + str(RAW_DIR))
-        print("   [INFO] Generating synthetic jobs only")
-    else:
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Process Kaggle subdirectories (datasets downloaded as folders)
+    kaggle_dirs = [d for d in RAW_DIR.iterdir() if d.is_dir()]
+    for kaggle_dir in kaggle_dirs:
         dir_name = kaggle_dir.name
         print("[PROCESS] " + dir_name)
-        
         jobs = process_upwork_jobs_2024(kaggle_dir)
         stats["by_source"][dir_name] = len(jobs)
         stats["real"] += len(jobs)
         stats["total"] += len(jobs)
         all_jobs.extend(jobs)
         print("   [OK] " + str(len(jobs)) + " jobs extracted from " + dir_name)
+
+    # Process root-level Kaggle CSV/JSON files directly
+    root_csv_files = list(RAW_DIR.glob("*.csv")) + list(RAW_DIR.glob("*.json"))
+    if root_csv_files:
+        print("[PROCESS] root-level Kaggle files")
+        jobs = process_upwork_jobs_2024(RAW_DIR)
+        stats["by_source"]["root_level_files"] = len(jobs)
+        stats["real"] += len(jobs)
+        stats["total"] += len(jobs)
+        all_jobs.extend(jobs)
+        print("   [OK] " + str(len(jobs)) + " jobs extracted from root-level files")
+
+    if not kaggle_dirs and not root_csv_files:
+        print("[WARN] No Kaggle datasets found in " + str(RAW_DIR))
+        print("   [INFO] Generating synthetic jobs only")
+
     
     synthetic_jobs = _generate_synthetic_jobs()
     stats["synthetic"] = len(synthetic_jobs)
