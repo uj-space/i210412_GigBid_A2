@@ -139,8 +139,9 @@ def build_pdf() -> Path:
     pdf.cell(0, 8, "GigBid: Engineering Design Review & R&D Report", new_x="LMARGIN", new_y="NEXT")
     pdf.set_font("Helvetica", "", 9)
     pdf.set_text_color(71, 85, 105)
-    pdf.cell(0, 5, "AI-4016 Agentic AI (Assignment II)  |  Repo: github.com/uj-space/i210412_GigBid_A2", new_x="LMARGIN", new_y="NEXT")
-    pdf.cell(0, 5, "Live Deployment (open profile): https://gigbid-copilot-wnto.onrender.com  |  Reviewer Quick Login enabled", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 5, "AI-4016 Agentic AI (Assignment II)  |  GitHub: https://github.com/uj-space/i210412_GigBid_A2", new_x="LMARGIN", new_y="NEXT", link="https://github.com/uj-space/i210412_GigBid_A2")
+    pdf.cell(0, 5, "Live App (open profile): https://gigbid-copilot-wnto.onrender.com/  |  Reviewer Quick Login enabled", new_x="LMARGIN", new_y="NEXT", link="https://gigbid-copilot-wnto.onrender.com/")
+    pdf.cell(0, 5, "Demo Video (3 min): https://drive.google.com/file/d/1ix2pS0kog6XsTt8LtBaPxImXd-f2kSSK/view?usp=sharing", new_x="LMARGIN", new_y="NEXT", link="https://drive.google.com/file/d/1ix2pS0kog6XsTt8LtBaPxImXd-f2kSSK/view?usp=sharing")
     pdf.ln(2)
 
     # 1. Problem & Constraints
