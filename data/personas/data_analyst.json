@@ -1,0 +1,3664 @@
+{
+  "persona_id": "data_analyst",
+  "profile": {
+    "name": "Zainab Raza",
+    "title": "Senior Data Analyst & BI Engineer",
+    "hourly_floor": 32.0,
+    "core_skills": [
+      "SQL",
+      "Python",
+      "pandas",
+      "dbt",
+      "Power BI",
+      "Tableau",
+      "PostgreSQL",
+      "Airflow",
+      "Excel",
+      "Looker"
+    ]
+  },
+  "counts": {
+    "total": 181,
+    "case_studies": 18,
+    "repo_code": 6,
+    "reviews": 6,
+    "past_proposals": 150,
+    "cv": 1
+  },
+  "items": [
+    {
+      "evidence_id": "data_analyst-cv-01",
+      "persona": "data_analyst",
+      "type": "cv",
+      "project": "Zainab Raza — Curriculum Vitae",
+      "title": "Senior Data Analyst & BI Engineer",
+      "skills": [
+        "SQL",
+        "Python",
+        "pandas",
+        "dbt",
+        "Power BI",
+        "Tableau",
+        "PostgreSQL",
+        "Airflow",
+        "Excel",
+        "Looker"
+      ],
+      "date": "2026-10-01",
+      "client_industry": "Cross-Industry",
+      "outcome": "verified",
+      "summary": "Senior Data Analyst & BI Engineer with 6+ years delivering production systems in SQL, Python, pandas, dbt, Power BI, Tableau.",
+      "text": "Zainab Raza | Senior Data Analyst & BI Engineer. Core stack: SQL, Python, pandas, dbt, Power BI, Tableau, PostgreSQL, Airflow, Excel, Looker. Floor rate: $32.0/hr.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-01",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "dbt + PostgreSQL Revenue Warehouse (E-commerce)",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2024-01-15",
+      "client_industry": "E-commerce",
+      "outcome": "won",
+      "summary": "Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. Architecture & measurable production impact.",
+      "text": "Case Study [data_analyst-cs-01]: dbt + PostgreSQL Revenue Warehouse for E-commerce client. Skills: SQL, dbt, PostgreSQL, Airflow. Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. Architecture & measurable production impact.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-02",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "dbt + PostgreSQL Revenue Warehouse (Retail)",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-15",
+      "client_industry": "Retail",
+      "outcome": "won",
+      "summary": "Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. Implementation deep-dive, testing, and deployment.",
+      "text": "Case Study [data_analyst-cs-02]: dbt + PostgreSQL Revenue Warehouse for Retail client. Skills: SQL, dbt, PostgreSQL, Airflow. Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. Implementation deep-dive, testing, and deployment.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-03",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "dbt + PostgreSQL Revenue Warehouse (Logistics)",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2026-01-15",
+      "client_industry": "Logistics",
+      "outcome": "won",
+      "summary": "Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. Stakeholder outcomes and post-launch optimization.",
+      "text": "Case Study [data_analyst-cs-03]: dbt + PostgreSQL Revenue Warehouse for Logistics client. Skills: SQL, dbt, PostgreSQL, Airflow. Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. Stakeholder outcomes and post-launch optimization.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-04",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "E-Commerce Cohort & LTV Power BI Suite (Retail)",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2024-02-15",
+      "client_industry": "Retail",
+      "outcome": "won",
+      "summary": "Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. Architecture & measurable production impact.",
+      "text": "Case Study [data_analyst-cs-04]: E-Commerce Cohort & LTV Power BI Suite for Retail client. Skills: Power BI, SQL, Python, pandas. Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. Architecture & measurable production impact.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-05",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "E-Commerce Cohort & LTV Power BI Suite (Logistics)",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-15",
+      "client_industry": "Logistics",
+      "outcome": "won",
+      "summary": "Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. Implementation deep-dive, testing, and deployment.",
+      "text": "Case Study [data_analyst-cs-05]: E-Commerce Cohort & LTV Power BI Suite for Logistics client. Skills: Power BI, SQL, Python, pandas. Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. Implementation deep-dive, testing, and deployment.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-06",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "E-Commerce Cohort & LTV Power BI Suite (SaaS)",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2026-02-15",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. Stakeholder outcomes and post-launch optimization.",
+      "text": "Case Study [data_analyst-cs-06]: E-Commerce Cohort & LTV Power BI Suite for SaaS client. Skills: Power BI, SQL, Python, pandas. Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. Stakeholder outcomes and post-launch optimization.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-07",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Supply Chain SLA & Bottleneck Tracker (Logistics)",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2024-03-15",
+      "client_industry": "Logistics",
+      "outcome": "won",
+      "summary": "Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. Architecture & measurable production impact.",
+      "text": "Case Study [data_analyst-cs-07]: Supply Chain SLA & Bottleneck Tracker for Logistics client. Skills: Tableau, SQL, Python, Excel. Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. Architecture & measurable production impact.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-08",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Supply Chain SLA & Bottleneck Tracker (SaaS)",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-15",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. Implementation deep-dive, testing, and deployment.",
+      "text": "Case Study [data_analyst-cs-08]: Supply Chain SLA & Bottleneck Tracker for SaaS client. Skills: Tableau, SQL, Python, Excel. Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. Implementation deep-dive, testing, and deployment.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-09",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Supply Chain SLA & Bottleneck Tracker (Marketing)",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2026-03-15",
+      "client_industry": "Marketing",
+      "outcome": "won",
+      "summary": "Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. Stakeholder outcomes and post-launch optimization.",
+      "text": "Case Study [data_analyst-cs-09]: Supply Chain SLA & Bottleneck Tracker for Marketing client. Skills: Tableau, SQL, Python, Excel. Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. Stakeholder outcomes and post-launch optimization.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-10",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Marketing Attribution & CAC Modeling (SaaS)",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2024-04-15",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. Architecture & measurable production impact.",
+      "text": "Case Study [data_analyst-cs-10]: Marketing Attribution & CAC Modeling for SaaS client. Skills: Python, pandas, SQL, dbt. Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. Architecture & measurable production impact.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-11",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Marketing Attribution & CAC Modeling (Marketing)",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-15",
+      "client_industry": "Marketing",
+      "outcome": "won",
+      "summary": "Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. Implementation deep-dive, testing, and deployment.",
+      "text": "Case Study [data_analyst-cs-11]: Marketing Attribution & CAC Modeling for Marketing client. Skills: Python, pandas, SQL, dbt. Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. Implementation deep-dive, testing, and deployment.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-12",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Marketing Attribution & CAC Modeling (E-commerce)",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2026-04-15",
+      "client_industry": "E-commerce",
+      "outcome": "won",
+      "summary": "Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. Stakeholder outcomes and post-launch optimization.",
+      "text": "Case Study [data_analyst-cs-12]: Marketing Attribution & CAC Modeling for E-commerce client. Skills: Python, pandas, SQL, dbt. Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. Stakeholder outcomes and post-launch optimization.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-13",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Automated Financial Reconciliation Scripts (Marketing)",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2024-05-15",
+      "client_industry": "Marketing",
+      "outcome": "won",
+      "summary": "Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. Architecture & measurable production impact.",
+      "text": "Case Study [data_analyst-cs-13]: Automated Financial Reconciliation Scripts for Marketing client. Skills: Python, pandas, Excel, PostgreSQL. Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. Architecture & measurable production impact.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-14",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Automated Financial Reconciliation Scripts (E-commerce)",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-15",
+      "client_industry": "E-commerce",
+      "outcome": "won",
+      "summary": "Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. Implementation deep-dive, testing, and deployment.",
+      "text": "Case Study [data_analyst-cs-14]: Automated Financial Reconciliation Scripts for E-commerce client. Skills: Python, pandas, Excel, PostgreSQL. Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. Implementation deep-dive, testing, and deployment.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-15",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Automated Financial Reconciliation Scripts (Retail)",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2026-05-15",
+      "client_industry": "Retail",
+      "outcome": "won",
+      "summary": "Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. Stakeholder outcomes and post-launch optimization.",
+      "text": "Case Study [data_analyst-cs-15]: Automated Financial Reconciliation Scripts for Retail client. Skills: Python, pandas, Excel, PostgreSQL. Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. Stakeholder outcomes and post-launch optimization.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-16",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "SaaS Funnel & Churn Diagnostics (E-commerce)",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2024-06-15",
+      "client_industry": "E-commerce",
+      "outcome": "won",
+      "summary": "Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. Architecture & measurable production impact.",
+      "text": "Case Study [data_analyst-cs-16]: SaaS Funnel & Churn Diagnostics for E-commerce client. Skills: SQL, Tableau, Python, Looker. Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. Architecture & measurable production impact.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-17",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "SaaS Funnel & Churn Diagnostics (Retail)",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-15",
+      "client_industry": "Retail",
+      "outcome": "won",
+      "summary": "Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. Implementation deep-dive, testing, and deployment.",
+      "text": "Case Study [data_analyst-cs-17]: SaaS Funnel & Churn Diagnostics for Retail client. Skills: SQL, Tableau, Python, Looker. Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. Implementation deep-dive, testing, and deployment.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-cs-18",
+      "persona": "data_analyst",
+      "type": "case_study",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "SaaS Funnel & Churn Diagnostics (Logistics)",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2026-06-15",
+      "client_industry": "Logistics",
+      "outcome": "won",
+      "summary": "Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. Stakeholder outcomes and post-launch optimization.",
+      "text": "Case Study [data_analyst-cs-18]: SaaS Funnel & Churn Diagnostics for Logistics client. Skills: SQL, Tableau, Python, Looker. Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. Stakeholder outcomes and post-launch optimization.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-repo-01",
+      "persona": "data_analyst",
+      "type": "repo_code",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "github.com/gigbid-demo/dbt-+-postgresql-revenue-war",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-10",
+      "client_industry": "E-commerce",
+      "outcome": "verified",
+      "readme": "# dbt + PostgreSQL Revenue Warehouse\nModeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes.\nStack: SQL, dbt, PostgreSQL, Airflow",
+      "code_snippet": "def run_dbt_+_postgresql_revenue_war(payload: dict) -> dict:\n    # Uses SQL & dbt\n    return {'status': 'ok', 'stack': ['SQL', 'dbt', 'PostgreSQL']}",
+      "summary": "Open-source reference repo for dbt + PostgreSQL Revenue Warehouse: Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes.",
+      "text": "Repo dbt-+-postgresql-revenue-war: Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. Code uses SQL, dbt, PostgreSQL, Airflow.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-repo-02",
+      "persona": "data_analyst",
+      "type": "repo_code",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "github.com/gigbid-demo/e-commerce-cohort-&-ltv-powe",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-10",
+      "client_industry": "Retail",
+      "outcome": "verified",
+      "readme": "# E-Commerce Cohort & LTV Power BI Suite\nBuilt interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns.\nStack: Power BI, SQL, Python, pandas",
+      "code_snippet": "def run_e_commerce_cohort_&_ltv_powe(payload: dict) -> dict:\n    # Uses Power BI & SQL\n    return {'status': 'ok', 'stack': ['Power BI', 'SQL', 'Python']}",
+      "summary": "Open-source reference repo for E-Commerce Cohort & LTV Power BI Suite: Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns.",
+      "text": "Repo e-commerce-cohort-&-ltv-powe: Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. Code uses Power BI, SQL, Python, pandas.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-repo-03",
+      "persona": "data_analyst",
+      "type": "repo_code",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "github.com/gigbid-demo/supply-chain-sla-&-bottlenec",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-10",
+      "client_industry": "Logistics",
+      "outcome": "verified",
+      "readme": "# Supply Chain SLA & Bottleneck Tracker\nConsolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%.\nStack: Tableau, SQL, Python, Excel",
+      "code_snippet": "def run_supply_chain_sla_&_bottlenec(payload: dict) -> dict:\n    # Uses Tableau & SQL\n    return {'status': 'ok', 'stack': ['Tableau', 'SQL', 'Python']}",
+      "summary": "Open-source reference repo for Supply Chain SLA & Bottleneck Tracker: Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%.",
+      "text": "Repo supply-chain-sla-&-bottlenec: Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. Code uses Tableau, SQL, Python, Excel.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-repo-04",
+      "persona": "data_analyst",
+      "type": "repo_code",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "github.com/gigbid-demo/marketing-attribution-&-cac-",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-10",
+      "client_industry": "SaaS",
+      "outcome": "verified",
+      "readme": "# Marketing Attribution & CAC Modeling\nImplemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend.\nStack: Python, pandas, SQL, dbt",
+      "code_snippet": "def run_marketing_attribution_&_cac_(payload: dict) -> dict:\n    # Uses Python & pandas\n    return {'status': 'ok', 'stack': ['Python', 'pandas', 'SQL']}",
+      "summary": "Open-source reference repo for Marketing Attribution & CAC Modeling: Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend.",
+      "text": "Repo marketing-attribution-&-cac-: Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. Code uses Python, pandas, SQL, dbt.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-repo-05",
+      "persona": "data_analyst",
+      "type": "repo_code",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "github.com/gigbid-demo/automated-financial-reconcil",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-10",
+      "client_industry": "Marketing",
+      "outcome": "verified",
+      "readme": "# Automated Financial Reconciliation Scripts\nReplaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts.\nStack: Python, pandas, Excel, PostgreSQL",
+      "code_snippet": "def run_automated_financial_reconcil(payload: dict) -> dict:\n    # Uses Python & pandas\n    return {'status': 'ok', 'stack': ['Python', 'pandas', 'Excel']}",
+      "summary": "Open-source reference repo for Automated Financial Reconciliation Scripts: Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts.",
+      "text": "Repo automated-financial-reconcil: Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. Code uses Python, pandas, Excel, PostgreSQL.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-repo-06",
+      "persona": "data_analyst",
+      "type": "repo_code",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "github.com/gigbid-demo/saas-funnel-&-churn-diagnost",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-10",
+      "client_industry": "E-commerce",
+      "outcome": "verified",
+      "readme": "# SaaS Funnel & Churn Diagnostics\nIdentified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points.\nStack: SQL, Tableau, Python, Looker",
+      "code_snippet": "def run_saas_funnel_&_churn_diagnost(payload: dict) -> dict:\n    # Uses SQL & Tableau\n    return {'status': 'ok', 'stack': ['SQL', 'Tableau', 'Python']}",
+      "summary": "Open-source reference repo for SaaS Funnel & Churn Diagnostics: Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points.",
+      "text": "Repo saas-funnel-&-churn-diagnost: Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. Code uses SQL, Tableau, Python, Looker.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-rev-01",
+      "persona": "data_analyst",
+      "type": "client_review",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "5.0/5.0 Client Review — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL"
+      ],
+      "date": "2026-03-12",
+      "client_industry": "E-commerce",
+      "outcome": "won",
+      "summary": "Zainab Raza delivered dbt + PostgreSQL Revenue Warehouse on time with clear milestones and strong communication.",
+      "text": "Client review (5.0/5.0) for dbt + PostgreSQL Revenue Warehouse: Zainab Raza communicated clearly and delivered production-grade SQL, dbt, PostgreSQL.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-rev-02",
+      "persona": "data_analyst",
+      "type": "client_review",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "5.0/5.0 Client Review — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python"
+      ],
+      "date": "2026-03-12",
+      "client_industry": "Retail",
+      "outcome": "won",
+      "summary": "Zainab Raza delivered E-Commerce Cohort & LTV Power BI Suite on time with clear milestones and strong communication.",
+      "text": "Client review (5.0/5.0) for E-Commerce Cohort & LTV Power BI Suite: Zainab Raza communicated clearly and delivered production-grade Power BI, SQL, Python.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-rev-03",
+      "persona": "data_analyst",
+      "type": "client_review",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "5.0/5.0 Client Review — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python"
+      ],
+      "date": "2026-03-12",
+      "client_industry": "Logistics",
+      "outcome": "won",
+      "summary": "Zainab Raza delivered Supply Chain SLA & Bottleneck Tracker on time with clear milestones and strong communication.",
+      "text": "Client review (5.0/5.0) for Supply Chain SLA & Bottleneck Tracker: Zainab Raza communicated clearly and delivered production-grade Tableau, SQL, Python.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-rev-04",
+      "persona": "data_analyst",
+      "type": "client_review",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "5.0/5.0 Client Review — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL"
+      ],
+      "date": "2026-03-12",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "Zainab Raza delivered Marketing Attribution & CAC Modeling on time with clear milestones and strong communication.",
+      "text": "Client review (5.0/5.0) for Marketing Attribution & CAC Modeling: Zainab Raza communicated clearly and delivered production-grade Python, pandas, SQL.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-rev-05",
+      "persona": "data_analyst",
+      "type": "client_review",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "5.0/5.0 Client Review — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel"
+      ],
+      "date": "2026-03-12",
+      "client_industry": "Marketing",
+      "outcome": "won",
+      "summary": "Zainab Raza delivered Automated Financial Reconciliation Scripts on time with clear milestones and strong communication.",
+      "text": "Client review (5.0/5.0) for Automated Financial Reconciliation Scripts: Zainab Raza communicated clearly and delivered production-grade Python, pandas, Excel.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-rev-06",
+      "persona": "data_analyst",
+      "type": "client_review",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "5.0/5.0 Client Review — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python"
+      ],
+      "date": "2026-03-12",
+      "client_industry": "E-commerce",
+      "outcome": "won",
+      "summary": "Zainab Raza delivered SaaS Funnel & Churn Diagnostics on time with clear milestones and strong communication.",
+      "text": "Client review (5.0/5.0) for SaaS Funnel & Churn Diagnostics: Zainab Raza communicated clearly and delivered production-grade SQL, Tableau, Python.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-001",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-01",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-002",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-02",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-003",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (replied) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-03",
+      "client_industry": "Logistics",
+      "outcome": "replied",
+      "summary": "For your Logistics supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Logistics: For your Logistics supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-004",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (replied) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-04",
+      "client_industry": "SaaS",
+      "outcome": "replied",
+      "summary": "For your SaaS marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for SaaS: For your SaaS marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-005",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (won) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-05",
+      "client_industry": "Marketing",
+      "outcome": "won",
+      "summary": "For your Marketing automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Marketing: For your Marketing automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-006",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (replied) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-06",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-007",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (won) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-07",
+      "client_industry": "Retail",
+      "outcome": "won",
+      "summary": "For your Retail dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Retail: For your Retail dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-008",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (replied) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-08",
+      "client_industry": "Logistics",
+      "outcome": "replied",
+      "summary": "For your Logistics e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Logistics: For your Logistics e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-009",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-09",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-010",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-10",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-011",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-11",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-012",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-12",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-013",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (replied) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-13",
+      "client_industry": "Logistics",
+      "outcome": "replied",
+      "summary": "For your Logistics dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Logistics: For your Logistics dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-014",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (won) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-14",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "For your SaaS e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for SaaS: For your SaaS e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-015",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (replied) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-15",
+      "client_industry": "Marketing",
+      "outcome": "replied",
+      "summary": "For your Marketing supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Marketing: For your Marketing supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-016",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-16",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-017",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-17",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-018",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-18",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-019",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-19",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-020",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-20",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-021",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-21",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-022",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-22",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-023",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-23",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-024",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-24",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-025",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (replied) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-25",
+      "client_industry": "Marketing",
+      "outcome": "replied",
+      "summary": "For your Marketing dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Marketing: For your Marketing dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-026",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (won) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-26",
+      "client_industry": "E-commerce",
+      "outcome": "won",
+      "summary": "For your E-commerce e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for E-commerce: For your E-commerce e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-027",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-27",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-028",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (replied) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-28",
+      "client_industry": "Logistics",
+      "outcome": "replied",
+      "summary": "For your Logistics marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Logistics: For your Logistics marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-029",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (replied) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-01",
+      "client_industry": "SaaS",
+      "outcome": "replied",
+      "summary": "For your SaaS automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for SaaS: For your SaaS automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-030",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (won) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-02",
+      "client_industry": "Marketing",
+      "outcome": "won",
+      "summary": "For your Marketing saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Marketing: For your Marketing saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-031",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (replied) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-03",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-032",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (won) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-04",
+      "client_industry": "Retail",
+      "outcome": "won",
+      "summary": "For your Retail e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Retail: For your Retail e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-033",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-05",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-034",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (won) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-06",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "For your SaaS marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for SaaS: For your SaaS marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-035",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-07",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-036",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (replied) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-08",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-037",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-09",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-038",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-10",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-039",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (won) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-11",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "For your SaaS supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for SaaS: For your SaaS supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-040",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-12",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-041",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-13",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-042",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-14",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-043",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-15",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-044",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (won) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-16",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "For your SaaS e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for SaaS: For your SaaS e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-045",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (replied) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-17",
+      "client_industry": "Marketing",
+      "outcome": "replied",
+      "summary": "For your Marketing supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Marketing: For your Marketing supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-046",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-18",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-047",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-19",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-048",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (replied) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-20",
+      "client_industry": "Logistics",
+      "outcome": "replied",
+      "summary": "For your Logistics saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Logistics: For your Logistics saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-049",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-21",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-050",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (replied) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-22",
+      "client_industry": "Marketing",
+      "outcome": "replied",
+      "summary": "For your Marketing e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Marketing: For your Marketing e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-051",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (replied) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-23",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-052",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (won) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-24",
+      "client_industry": "Retail",
+      "outcome": "won",
+      "summary": "For your Retail marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Retail: For your Retail marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-053",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-25",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-054",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-26",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-055",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-27",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-056",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (replied) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-28",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-057",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-01",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-058",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-02",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-059",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (won) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-03",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "For your SaaS automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for SaaS: For your SaaS automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-060",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (won) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-04",
+      "client_industry": "Marketing",
+      "outcome": "won",
+      "summary": "For your Marketing saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Marketing: For your Marketing saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-061",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-05",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-062",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (replied) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-06",
+      "client_industry": "Retail",
+      "outcome": "replied",
+      "summary": "For your Retail e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Retail: For your Retail e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-063",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-07",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-064",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-08",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-065",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-09",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-066",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-10",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-067",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (replied) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-11",
+      "client_industry": "Retail",
+      "outcome": "replied",
+      "summary": "For your Retail dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Retail: For your Retail dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-068",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (replied) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-12",
+      "client_industry": "Logistics",
+      "outcome": "replied",
+      "summary": "For your Logistics e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Logistics: For your Logistics e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-069",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-13",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-070",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (won) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-14",
+      "client_industry": "Marketing",
+      "outcome": "won",
+      "summary": "For your Marketing marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Marketing: For your Marketing marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-071",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (replied) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-15",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-072",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-16",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-073",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (replied) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-17",
+      "client_industry": "Logistics",
+      "outcome": "replied",
+      "summary": "For your Logistics dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Logistics: For your Logistics dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-074",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (replied) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-18",
+      "client_industry": "SaaS",
+      "outcome": "replied",
+      "summary": "For your SaaS e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for SaaS: For your SaaS e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-075",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (replied) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-19",
+      "client_industry": "Marketing",
+      "outcome": "replied",
+      "summary": "For your Marketing supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Marketing: For your Marketing supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-076",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (replied) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-20",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-077",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (replied) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-21",
+      "client_industry": "Retail",
+      "outcome": "replied",
+      "summary": "For your Retail automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Retail: For your Retail automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-078",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (won) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-22",
+      "client_industry": "Logistics",
+      "outcome": "won",
+      "summary": "For your Logistics saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Logistics: For your Logistics saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-079",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-23",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-080",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-24",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-081",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-25",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-082",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-26",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-083",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-27",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-084",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (replied) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-28",
+      "client_industry": "SaaS",
+      "outcome": "replied",
+      "summary": "For your SaaS saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for SaaS: For your SaaS saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-085",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (replied) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-01",
+      "client_industry": "Marketing",
+      "outcome": "replied",
+      "summary": "For your Marketing dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Marketing: For your Marketing dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-086",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-02",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-087",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-03",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-088",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (replied) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-04",
+      "client_industry": "Logistics",
+      "outcome": "replied",
+      "summary": "For your Logistics marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Logistics: For your Logistics marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-089",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (won) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-05",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "For your SaaS automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for SaaS: For your SaaS automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-090",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-06",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-091",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (won) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-07",
+      "client_industry": "E-commerce",
+      "outcome": "won",
+      "summary": "For your E-commerce dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for E-commerce: For your E-commerce dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-092",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (replied) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-08",
+      "client_industry": "Retail",
+      "outcome": "replied",
+      "summary": "For your Retail e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Retail: For your Retail e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-093",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (won) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-09",
+      "client_industry": "Logistics",
+      "outcome": "won",
+      "summary": "For your Logistics supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Logistics: For your Logistics supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-094",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-10",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-095",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-11",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-096",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-12",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-097",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-13",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-098",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-14",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-099",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-15",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-100",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-16",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-101",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-17",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-102",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-18",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-103",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-19",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-104",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (replied) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-20",
+      "client_industry": "SaaS",
+      "outcome": "replied",
+      "summary": "For your SaaS e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for SaaS: For your SaaS e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-105",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-21",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-106",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (won) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-22",
+      "client_industry": "E-commerce",
+      "outcome": "won",
+      "summary": "For your E-commerce marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for E-commerce: For your E-commerce marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-107",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (won) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-23",
+      "client_industry": "Retail",
+      "outcome": "won",
+      "summary": "For your Retail automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Retail: For your Retail automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-108",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-24",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-109",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-25",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-110",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (won) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-26",
+      "client_industry": "Marketing",
+      "outcome": "won",
+      "summary": "For your Marketing e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Marketing: For your Marketing e-commerce cohort & ltv power bi suite initiative, I recently delivered Built interactive Power BI retention & LTV dashboards driving $180k in targeted win-back campaigns. using Power BI, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-111",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (replied) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-27",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-112",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (won) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-28",
+      "client_industry": "Retail",
+      "outcome": "won",
+      "summary": "For your Retail marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Retail: For your Retail marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-113",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (won) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-01",
+      "client_industry": "Logistics",
+      "outcome": "won",
+      "summary": "For your Logistics automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Logistics: For your Logistics automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-114",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-02",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-115",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-03",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-116",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-04",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-117",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-05",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-118",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-06",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-119",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (replied) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-07",
+      "client_industry": "SaaS",
+      "outcome": "replied",
+      "summary": "For your SaaS automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for SaaS: For your SaaS automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-120",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-08",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-121",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (replied) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-09",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-122",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-10",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-123",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-11",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-124",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (won) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-12",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "For your SaaS marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for SaaS: For your SaaS marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-125",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-13",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-126",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (replied) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-14",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-127",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (replied) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-15",
+      "client_industry": "Retail",
+      "outcome": "replied",
+      "summary": "For your Retail dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Retail: For your Retail dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-128",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-16",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-129",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (replied) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-17",
+      "client_industry": "SaaS",
+      "outcome": "replied",
+      "summary": "For your SaaS supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for SaaS: For your SaaS supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-130",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (ignored) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-18",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-131",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (replied) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-19",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-132",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (replied) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-20",
+      "client_industry": "Retail",
+      "outcome": "replied",
+      "summary": "For your Retail saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Retail: For your Retail saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-133",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-21",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-134",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-22",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-135",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-23",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-136",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (replied) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-24",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-137",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (replied) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-25",
+      "client_industry": "Retail",
+      "outcome": "replied",
+      "summary": "For your Retail automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Retail: For your Retail automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-138",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (ignored) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-26",
+      "client_industry": "Logistics",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Logistics: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-139",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (won) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-07-27",
+      "client_industry": "SaaS",
+      "outcome": "won",
+      "summary": "For your SaaS dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for SaaS: For your SaaS dbt + postgresql revenue warehouse initiative, I recently delivered Modeled 14M order rows into tested dbt marts, cutting executive reporting lag from 3 days to 15 minutes. using SQL, dbt, PostgreSQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-140",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-08-28",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-141",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (replied) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-09-01",
+      "client_industry": "E-commerce",
+      "outcome": "replied",
+      "summary": "For your E-commerce supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for E-commerce: For your E-commerce supply chain sla & bottleneck tracker initiative, I recently delivered Consolidated 6 regional carrier feeds into automated Tableau alerts, improving on-time delivery by 11%. using Tableau, SQL, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-142",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (replied) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-10-02",
+      "client_industry": "Retail",
+      "outcome": "replied",
+      "summary": "For your Retail marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Retail: For your Retail marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-143",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (replied) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-11-03",
+      "client_industry": "Logistics",
+      "outcome": "replied",
+      "summary": "For your Logistics automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Logistics: For your Logistics automated financial reconciliation scripts initiative, I recently delivered Replaced 12 hours/week of manual Excel VLOOKUPs with audited Python reconciliation scripts. using Python, pandas, Excel. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-144",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (replied) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-12-04",
+      "client_industry": "SaaS",
+      "outcome": "replied",
+      "summary": "For your SaaS saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for SaaS: For your SaaS saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-145",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "dbt + PostgreSQL Revenue Warehouse",
+      "title": "Past Proposal (ignored) — dbt + PostgreSQL Revenue Warehouse",
+      "skills": [
+        "SQL",
+        "dbt",
+        "PostgreSQL",
+        "Airflow"
+      ],
+      "date": "2025-01-05",
+      "client_industry": "Marketing",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "text": "Past Proposal [ignored] for Marketing: I am a hardworking developer interested in your project. I know SQL and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-146",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "E-Commerce Cohort & LTV Power BI Suite",
+      "title": "Past Proposal (ignored) — E-Commerce Cohort & LTV Power BI Suite",
+      "skills": [
+        "Power BI",
+        "SQL",
+        "Python",
+        "pandas"
+      ],
+      "date": "2025-02-06",
+      "client_industry": "E-commerce",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "text": "Past Proposal [ignored] for E-commerce: I am a hardworking developer interested in your project. I know Power BI and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-147",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Supply Chain SLA & Bottleneck Tracker",
+      "title": "Past Proposal (ignored) — Supply Chain SLA & Bottleneck Tracker",
+      "skills": [
+        "Tableau",
+        "SQL",
+        "Python",
+        "Excel"
+      ],
+      "date": "2025-03-07",
+      "client_industry": "Retail",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "text": "Past Proposal [ignored] for Retail: I am a hardworking developer interested in your project. I know Tableau and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-148",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Marketing Attribution & CAC Modeling",
+      "title": "Past Proposal (won) — Marketing Attribution & CAC Modeling",
+      "skills": [
+        "Python",
+        "pandas",
+        "SQL",
+        "dbt"
+      ],
+      "date": "2025-04-08",
+      "client_industry": "Logistics",
+      "outcome": "won",
+      "summary": "For your Logistics marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [won] for Logistics: For your Logistics marketing attribution & cac modeling initiative, I recently delivered Implemented multi-touch Markov attribution model in Python + dbt, reallocating 22% of wasted ad spend. using Python, pandas, SQL. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-149",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "Automated Financial Reconciliation Scripts",
+      "title": "Past Proposal (ignored) — Automated Financial Reconciliation Scripts",
+      "skills": [
+        "Python",
+        "pandas",
+        "Excel",
+        "PostgreSQL"
+      ],
+      "date": "2025-05-09",
+      "client_industry": "SaaS",
+      "outcome": "ignored",
+      "summary": "I am a hardworking developer interested in your project. I know Python and can start now.",
+      "text": "Past Proposal [ignored] for SaaS: I am a hardworking developer interested in your project. I know Python and can start now.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    },
+    {
+      "evidence_id": "data_analyst-prop-150",
+      "persona": "data_analyst",
+      "type": "past_proposal",
+      "project": "SaaS Funnel & Churn Diagnostics",
+      "title": "Past Proposal (replied) — SaaS Funnel & Churn Diagnostics",
+      "skills": [
+        "SQL",
+        "Tableau",
+        "Python",
+        "Looker"
+      ],
+      "date": "2025-06-10",
+      "client_industry": "Marketing",
+      "outcome": "replied",
+      "summary": "For your Marketing saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "text": "Past Proposal [replied] for Marketing: For your Marketing saas funnel & churn diagnostics initiative, I recently delivered Identified onboarding drop-off step affecting 31% of trial users, lifting 14-day activation by 9 points. using SQL, Tableau, Python. Happy to share a 2-milestone plan.",
+      "is_real_data": false,
+      "provenance": "synthetic_persona_corpus"
+    }
+  ],
+  "is_real_data": false,
+  "provenance": "synthetic_persona_corpus"
+}

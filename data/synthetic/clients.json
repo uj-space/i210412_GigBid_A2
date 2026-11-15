@@ -1,0 +1,1322 @@
+[
+  {
+    "client_id": "dev-client-001",
+    "company": "Client Co. 001",
+    "industry": "HealthTech",
+    "completed_projects": 4,
+    "average_rating": 4.2,
+    "payment_verified": true,
+    "total_spent": 2020.0,
+    "hire_rate": 0.43,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "React",
+        "Python"
+      ],
+      "budget_ceiling": 1150.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-002",
+    "company": "Client Co. 002",
+    "industry": "SaaS",
+    "completed_projects": 5,
+    "average_rating": 4.3,
+    "payment_verified": true,
+    "total_spent": 2540.0,
+    "hire_rate": 0.51,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "LangGraph",
+        "FastAPI"
+      ],
+      "budget_ceiling": 1500.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-003",
+    "company": "Client Co. 003",
+    "industry": "E-commerce",
+    "completed_projects": 6,
+    "average_rating": 4.4,
+    "payment_verified": true,
+    "total_spent": 3060.0,
+    "hire_rate": 0.59,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "FastAPI",
+        "SQL"
+      ],
+      "budget_ceiling": 1850.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-004",
+    "company": "Client Co. 004",
+    "industry": "LegalTech",
+    "completed_projects": 7,
+    "average_rating": 4.5,
+    "payment_verified": true,
+    "total_spent": 3580.0,
+    "hire_rate": 0.67,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "React",
+        "pandas"
+      ],
+      "budget_ceiling": 2200.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-005",
+    "company": "Client Co. 005",
+    "industry": "EdTech",
+    "completed_projects": 8,
+    "average_rating": 4.6,
+    "payment_verified": true,
+    "total_spent": 4100.0,
+    "hire_rate": 0.75,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "React",
+        "Power BI"
+      ],
+      "budget_ceiling": 2550.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-006",
+    "company": "Client Co. 006",
+    "industry": "Logistics",
+    "completed_projects": 0,
+    "average_rating": 0.0,
+    "payment_verified": false,
+    "total_spent": 0.0,
+    "hire_rate": 0.0,
+    "notes": "New unverified client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Python",
+        "Docker"
+      ],
+      "budget_ceiling": 2900.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-007",
+    "company": "Client Co. 007",
+    "industry": "Marketing",
+    "completed_projects": 10,
+    "average_rating": 4.8,
+    "payment_verified": true,
+    "total_spent": 5140.0,
+    "hire_rate": 0.43,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "React",
+        "FastAPI"
+      ],
+      "budget_ceiling": 3250.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-008",
+    "company": "Client Co. 008",
+    "industry": "FinTech",
+    "completed_projects": 11,
+    "average_rating": 4.9,
+    "payment_verified": true,
+    "total_spent": 5660.0,
+    "hire_rate": 0.51,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "FastAPI",
+        "pandas"
+      ],
+      "budget_ceiling": 3600.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-009",
+    "company": "Client Co. 009",
+    "industry": "HealthTech",
+    "completed_projects": 12,
+    "average_rating": 4.1,
+    "payment_verified": true,
+    "total_spent": 6180.0,
+    "hire_rate": 0.59,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Docker",
+        "Python"
+      ],
+      "budget_ceiling": 3950.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-010",
+    "company": "Client Co. 010",
+    "industry": "SaaS",
+    "completed_projects": 13,
+    "average_rating": 4.2,
+    "payment_verified": true,
+    "total_spent": 6700.0,
+    "hire_rate": 0.67,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "pandas",
+        "FastAPI"
+      ],
+      "budget_ceiling": 800.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-011",
+    "company": "Client Co. 011",
+    "industry": "E-commerce",
+    "completed_projects": 14,
+    "average_rating": 4.3,
+    "payment_verified": true,
+    "total_spent": 7220.0,
+    "hire_rate": 0.75,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "pandas",
+        "Power BI"
+      ],
+      "budget_ceiling": 1150.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-012",
+    "company": "Client Co. 012",
+    "industry": "LegalTech",
+    "completed_projects": 0,
+    "average_rating": 0.0,
+    "payment_verified": false,
+    "total_spent": 0.0,
+    "hire_rate": 0.0,
+    "notes": "New unverified client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "FastAPI",
+        "dbt"
+      ],
+      "budget_ceiling": 1500.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-013",
+    "company": "Client Co. 013",
+    "industry": "EdTech",
+    "completed_projects": 16,
+    "average_rating": 4.5,
+    "payment_verified": true,
+    "total_spent": 8260.0,
+    "hire_rate": 0.43,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Docker",
+        "LangGraph"
+      ],
+      "budget_ceiling": 1850.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-014",
+    "company": "Client Co. 014",
+    "industry": "Logistics",
+    "completed_projects": 3,
+    "average_rating": 4.6,
+    "payment_verified": true,
+    "total_spent": 8780.0,
+    "hire_rate": 0.51,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Python",
+        "SQL"
+      ],
+      "budget_ceiling": 2200.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-015",
+    "company": "Client Co. 015",
+    "industry": "Marketing",
+    "completed_projects": 4,
+    "average_rating": 4.7,
+    "payment_verified": true,
+    "total_spent": 9300.0,
+    "hire_rate": 0.59,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Power BI",
+        "TypeScript"
+      ],
+      "budget_ceiling": 2550.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-016",
+    "company": "Client Co. 016",
+    "industry": "FinTech",
+    "completed_projects": 5,
+    "average_rating": 4.8,
+    "payment_verified": true,
+    "total_spent": 9820.0,
+    "hire_rate": 0.67,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "LangGraph",
+        "SQL"
+      ],
+      "budget_ceiling": 2900.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-017",
+    "company": "Client Co. 017",
+    "industry": "HealthTech",
+    "completed_projects": 6,
+    "average_rating": 4.9,
+    "payment_verified": true,
+    "total_spent": 10340.0,
+    "hire_rate": 0.75,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "FastAPI",
+        "TypeScript"
+      ],
+      "budget_ceiling": 3250.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-018",
+    "company": "Client Co. 018",
+    "industry": "SaaS",
+    "completed_projects": 0,
+    "average_rating": 0.0,
+    "payment_verified": false,
+    "total_spent": 0.0,
+    "hire_rate": 0.0,
+    "notes": "New unverified client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "React",
+        "Docker"
+      ],
+      "budget_ceiling": 3600.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-019",
+    "company": "Client Co. 019",
+    "industry": "E-commerce",
+    "completed_projects": 8,
+    "average_rating": 4.2,
+    "payment_verified": true,
+    "total_spent": 11380.0,
+    "hire_rate": 0.43,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Power BI",
+        "React"
+      ],
+      "budget_ceiling": 3950.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-020",
+    "company": "Client Co. 020",
+    "industry": "LegalTech",
+    "completed_projects": 9,
+    "average_rating": 4.3,
+    "payment_verified": true,
+    "total_spent": 11900.0,
+    "hire_rate": 0.51,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "budget_ceiling": 800.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-021",
+    "company": "Client Co. 021",
+    "industry": "EdTech",
+    "completed_projects": 10,
+    "average_rating": 4.4,
+    "payment_verified": true,
+    "total_spent": 12420.0,
+    "hire_rate": 0.59,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Docker",
+        "LangGraph"
+      ],
+      "budget_ceiling": 1150.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-022",
+    "company": "Client Co. 022",
+    "industry": "Logistics",
+    "completed_projects": 11,
+    "average_rating": 4.5,
+    "payment_verified": true,
+    "total_spent": 12940.0,
+    "hire_rate": 0.67,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Python",
+        "dbt"
+      ],
+      "budget_ceiling": 1500.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-023",
+    "company": "Client Co. 023",
+    "industry": "Marketing",
+    "completed_projects": 12,
+    "average_rating": 4.6,
+    "payment_verified": true,
+    "total_spent": 13460.0,
+    "hire_rate": 0.75,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "pandas",
+        "React"
+      ],
+      "budget_ceiling": 1850.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-024",
+    "company": "Client Co. 024",
+    "industry": "FinTech",
+    "completed_projects": 0,
+    "average_rating": 0.0,
+    "payment_verified": false,
+    "total_spent": 0.0,
+    "hire_rate": 0.0,
+    "notes": "New unverified client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Power BI",
+        "React"
+      ],
+      "budget_ceiling": 2200.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-025",
+    "company": "Client Co. 025",
+    "industry": "HealthTech",
+    "completed_projects": 14,
+    "average_rating": 4.8,
+    "payment_verified": true,
+    "total_spent": 14500.0,
+    "hire_rate": 0.43,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "pandas",
+        "LangGraph"
+      ],
+      "budget_ceiling": 2550.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-026",
+    "company": "Client Co. 026",
+    "industry": "SaaS",
+    "completed_projects": 15,
+    "average_rating": 4.9,
+    "payment_verified": true,
+    "total_spent": 15020.0,
+    "hire_rate": 0.51,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Docker",
+        "TypeScript"
+      ],
+      "budget_ceiling": 2900.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-027",
+    "company": "Client Co. 027",
+    "industry": "E-commerce",
+    "completed_projects": 16,
+    "average_rating": 4.1,
+    "payment_verified": true,
+    "total_spent": 15540.0,
+    "hire_rate": 0.59,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Docker",
+        "FastAPI"
+      ],
+      "budget_ceiling": 3250.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-028",
+    "company": "Client Co. 028",
+    "industry": "LegalTech",
+    "completed_projects": 3,
+    "average_rating": 4.2,
+    "payment_verified": true,
+    "total_spent": 16060.0,
+    "hire_rate": 0.67,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "React",
+        "Python"
+      ],
+      "budget_ceiling": 3600.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-029",
+    "company": "Client Co. 029",
+    "industry": "EdTech",
+    "completed_projects": 4,
+    "average_rating": 4.3,
+    "payment_verified": true,
+    "total_spent": 16580.0,
+    "hire_rate": 0.75,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "FastAPI",
+        "LangGraph"
+      ],
+      "budget_ceiling": 3950.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-030",
+    "company": "Client Co. 030",
+    "industry": "Logistics",
+    "completed_projects": 0,
+    "average_rating": 0.0,
+    "payment_verified": false,
+    "total_spent": 0.0,
+    "hire_rate": 0.0,
+    "notes": "New unverified client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "React",
+        "FastAPI"
+      ],
+      "budget_ceiling": 800.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-031",
+    "company": "Client Co. 031",
+    "industry": "Marketing",
+    "completed_projects": 6,
+    "average_rating": 4.5,
+    "payment_verified": true,
+    "total_spent": 17620.0,
+    "hire_rate": 0.43,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "React",
+        "Power BI"
+      ],
+      "budget_ceiling": 1150.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-032",
+    "company": "Client Co. 032",
+    "industry": "FinTech",
+    "completed_projects": 7,
+    "average_rating": 4.6,
+    "payment_verified": true,
+    "total_spent": 18140.0,
+    "hire_rate": 0.51,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "LangGraph",
+        "dbt"
+      ],
+      "budget_ceiling": 1500.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-033",
+    "company": "Client Co. 033",
+    "industry": "HealthTech",
+    "completed_projects": 8,
+    "average_rating": 4.7,
+    "payment_verified": true,
+    "total_spent": 18660.0,
+    "hire_rate": 0.59,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "TypeScript",
+        "SQL"
+      ],
+      "budget_ceiling": 1850.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-034",
+    "company": "Client Co. 034",
+    "industry": "SaaS",
+    "completed_projects": 9,
+    "average_rating": 4.8,
+    "payment_verified": true,
+    "total_spent": 19180.0,
+    "hire_rate": 0.67,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "TypeScript",
+        "Docker"
+      ],
+      "budget_ceiling": 2200.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-035",
+    "company": "Client Co. 035",
+    "industry": "E-commerce",
+    "completed_projects": 10,
+    "average_rating": 4.9,
+    "payment_verified": true,
+    "total_spent": 19700.0,
+    "hire_rate": 0.75,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "FastAPI",
+        "LangGraph"
+      ],
+      "budget_ceiling": 2550.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-036",
+    "company": "Client Co. 036",
+    "industry": "LegalTech",
+    "completed_projects": 0,
+    "average_rating": 0.0,
+    "payment_verified": false,
+    "total_spent": 0.0,
+    "hire_rate": 0.0,
+    "notes": "New unverified client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "React",
+        "SQL"
+      ],
+      "budget_ceiling": 2900.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-037",
+    "company": "Client Co. 037",
+    "industry": "EdTech",
+    "completed_projects": 12,
+    "average_rating": 4.2,
+    "payment_verified": true,
+    "total_spent": 20740.0,
+    "hire_rate": 0.43,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "pandas",
+        "FastAPI"
+      ],
+      "budget_ceiling": 3250.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-038",
+    "company": "Client Co. 038",
+    "industry": "Logistics",
+    "completed_projects": 13,
+    "average_rating": 4.3,
+    "payment_verified": true,
+    "total_spent": 21260.0,
+    "hire_rate": 0.51,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "SQL",
+        "dbt"
+      ],
+      "budget_ceiling": 3600.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-039",
+    "company": "Client Co. 039",
+    "industry": "Marketing",
+    "completed_projects": 14,
+    "average_rating": 4.4,
+    "payment_verified": true,
+    "total_spent": 21780.0,
+    "hire_rate": 0.59,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Power BI",
+        "LangGraph"
+      ],
+      "budget_ceiling": 3950.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-040",
+    "company": "Client Co. 040",
+    "industry": "FinTech",
+    "completed_projects": 15,
+    "average_rating": 4.5,
+    "payment_verified": true,
+    "total_spent": 22300.0,
+    "hire_rate": 0.67,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "pandas",
+        "FastAPI"
+      ],
+      "budget_ceiling": 800.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-041",
+    "company": "Client Co. 041",
+    "industry": "HealthTech",
+    "completed_projects": 16,
+    "average_rating": 4.6,
+    "payment_verified": true,
+    "total_spent": 22820.0,
+    "hire_rate": 0.75,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "TypeScript",
+        "Python"
+      ],
+      "budget_ceiling": 1150.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-042",
+    "company": "Client Co. 042",
+    "industry": "SaaS",
+    "completed_projects": 0,
+    "average_rating": 0.0,
+    "payment_verified": false,
+    "total_spent": 0.0,
+    "hire_rate": 0.0,
+    "notes": "New unverified client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "FastAPI",
+        "Python"
+      ],
+      "budget_ceiling": 1500.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-043",
+    "company": "Client Co. 043",
+    "industry": "E-commerce",
+    "completed_projects": 4,
+    "average_rating": 4.8,
+    "payment_verified": true,
+    "total_spent": 23860.0,
+    "hire_rate": 0.43,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "TypeScript",
+        "Power BI"
+      ],
+      "budget_ceiling": 1850.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-044",
+    "company": "Client Co. 044",
+    "industry": "LegalTech",
+    "completed_projects": 5,
+    "average_rating": 4.9,
+    "payment_verified": true,
+    "total_spent": 24380.0,
+    "hire_rate": 0.51,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "LangGraph",
+        "React"
+      ],
+      "budget_ceiling": 2200.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-045",
+    "company": "Client Co. 045",
+    "industry": "EdTech",
+    "completed_projects": 6,
+    "average_rating": 4.1,
+    "payment_verified": true,
+    "total_spent": 24900.0,
+    "hire_rate": 0.59,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "FastAPI",
+        "TypeScript"
+      ],
+      "budget_ceiling": 2550.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-046",
+    "company": "Client Co. 046",
+    "industry": "Logistics",
+    "completed_projects": 7,
+    "average_rating": 4.2,
+    "payment_verified": true,
+    "total_spent": 25420.0,
+    "hire_rate": 0.67,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "FastAPI",
+        "dbt"
+      ],
+      "budget_ceiling": 2900.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-047",
+    "company": "Client Co. 047",
+    "industry": "Marketing",
+    "completed_projects": 8,
+    "average_rating": 4.3,
+    "payment_verified": true,
+    "total_spent": 25940.0,
+    "hire_rate": 0.75,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Power BI",
+        "dbt"
+      ],
+      "budget_ceiling": 3250.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-048",
+    "company": "Client Co. 048",
+    "industry": "FinTech",
+    "completed_projects": 0,
+    "average_rating": 0.0,
+    "payment_verified": false,
+    "total_spent": 0.0,
+    "hire_rate": 0.0,
+    "notes": "New unverified client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "SQL",
+        "LangGraph"
+      ],
+      "budget_ceiling": 3600.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-049",
+    "company": "Client Co. 049",
+    "industry": "HealthTech",
+    "completed_projects": 10,
+    "average_rating": 4.5,
+    "payment_verified": true,
+    "total_spent": 26980.0,
+    "hire_rate": 0.43,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "SQL",
+        "FastAPI"
+      ],
+      "budget_ceiling": 3950.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-050",
+    "company": "Client Co. 050",
+    "industry": "SaaS",
+    "completed_projects": 11,
+    "average_rating": 4.6,
+    "payment_verified": true,
+    "total_spent": 27500.0,
+    "hire_rate": 0.51,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "pandas",
+        "Docker"
+      ],
+      "budget_ceiling": 800.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-051",
+    "company": "Client Co. 051",
+    "industry": "E-commerce",
+    "completed_projects": 12,
+    "average_rating": 4.7,
+    "payment_verified": true,
+    "total_spent": 28020.0,
+    "hire_rate": 0.59,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "LangGraph",
+        "Power BI"
+      ],
+      "budget_ceiling": 1150.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-052",
+    "company": "Client Co. 052",
+    "industry": "LegalTech",
+    "completed_projects": 13,
+    "average_rating": 4.8,
+    "payment_verified": true,
+    "total_spent": 28540.0,
+    "hire_rate": 0.67,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Docker",
+        "Power BI"
+      ],
+      "budget_ceiling": 1500.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-053",
+    "company": "Client Co. 053",
+    "industry": "EdTech",
+    "completed_projects": 14,
+    "average_rating": 4.9,
+    "payment_verified": true,
+    "total_spent": 29060.0,
+    "hire_rate": 0.75,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "TypeScript",
+        "FastAPI"
+      ],
+      "budget_ceiling": 1850.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-054",
+    "company": "Client Co. 054",
+    "industry": "Logistics",
+    "completed_projects": 0,
+    "average_rating": 0.0,
+    "payment_verified": false,
+    "total_spent": 0.0,
+    "hire_rate": 0.0,
+    "notes": "New unverified client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "SQL",
+        "pandas"
+      ],
+      "budget_ceiling": 2200.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-055",
+    "company": "Client Co. 055",
+    "industry": "Marketing",
+    "completed_projects": 16,
+    "average_rating": 4.2,
+    "payment_verified": true,
+    "total_spent": 30100.0,
+    "hire_rate": 0.43,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "dbt",
+        "React"
+      ],
+      "budget_ceiling": 2550.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-056",
+    "company": "Client Co. 056",
+    "industry": "FinTech",
+    "completed_projects": 3,
+    "average_rating": 4.3,
+    "payment_verified": true,
+    "total_spent": 30620.0,
+    "hire_rate": 0.51,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Python",
+        "React"
+      ],
+      "budget_ceiling": 2900.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-057",
+    "company": "Client Co. 057",
+    "industry": "HealthTech",
+    "completed_projects": 4,
+    "average_rating": 4.4,
+    "payment_verified": true,
+    "total_spent": 31140.0,
+    "hire_rate": 0.59,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "SQL",
+        "Docker"
+      ],
+      "budget_ceiling": 3250.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-058",
+    "company": "Client Co. 058",
+    "industry": "SaaS",
+    "completed_projects": 5,
+    "average_rating": 4.5,
+    "payment_verified": true,
+    "total_spent": 31660.0,
+    "hire_rate": 0.67,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Power BI",
+        "React"
+      ],
+      "budget_ceiling": 3600.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-059",
+    "company": "Client Co. 059",
+    "industry": "E-commerce",
+    "completed_projects": 6,
+    "average_rating": 4.6,
+    "payment_verified": true,
+    "total_spent": 32180.0,
+    "hire_rate": 0.75,
+    "notes": "Verified repeat client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Power BI",
+        "Docker"
+      ],
+      "budget_ceiling": 3950.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": false
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  },
+  {
+    "client_id": "dev-client-060",
+    "company": "Client Co. 060",
+    "industry": "LegalTech",
+    "completed_projects": 0,
+    "average_rating": 0.0,
+    "payment_verified": false,
+    "total_spent": 0.0,
+    "hire_rate": 0.0,
+    "notes": "New unverified client",
+    "hidden_preferences": {
+      "must_have_skills": [
+        "Docker",
+        "dbt"
+      ],
+      "budget_ceiling": 800.0,
+      "dislikes_generic_openings": true,
+      "prefers_concise": true
+    },
+    "is_real_data": false,
+    "provenance": "synthetic_client_history"
+  }
+]

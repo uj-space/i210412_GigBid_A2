@@ -1,0 +1,43 @@
+{
+  "source": "asaniczka/freelance-contracts-dataset-1-3-million-entries",
+  "is_real_data": true,
+  "rows_sampled": 12332,
+  "hourly_rate": {
+    "count": 12332,
+    "p25": 14.0,
+    "median": 25.0,
+    "p75": 45.0
+  },
+  "total_paid": {
+    "count": 22471,
+    "p25": 81.7,
+    "median": 250.0,
+    "p75": 906.43
+  },
+  "by_category": {
+    "ai_ml": {
+      "count": 1324,
+      "p25": 15.0,
+      "median": 30.0,
+      "p75": 50.0
+    },
+    "web_dev": {
+      "count": 1860,
+      "p25": 15.0,
+      "median": 25.0,
+      "p75": 40.0
+    },
+    "data_analytics": {
+      "count": 309,
+      "p25": 18.0,
+      "median": 33.33,
+      "p75": 60.0
+    },
+    "other": {
+      "count": 8839,
+      "p25": 12.5,
+      "median": 25.0,
+      "p75": 45.0
+    }
+  }
+}

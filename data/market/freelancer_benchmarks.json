@@ -1,0 +1,52 @@
+{
+  "source": "sarveshchhetri/freelancer-success-earnings-and-churn-prediction",
+  "is_real_data": true,
+  "count": 3554,
+  "median_hourly_usd": 168.89,
+  "by_primary_skill": {
+    "AI & Machine Learning": {
+      "count": 408,
+      "median_rate": 169.49
+    },
+    "Accounting & Finance": {
+      "count": 131,
+      "median_rate": 175.0
+    },
+    "Content Writing / Copywriting": {
+      "count": 413,
+      "median_rate": 168.79
+    },
+    "Data Science & Analytics": {
+      "count": 321,
+      "median_rate": 171.44
+    },
+    "Digital Marketing": {
+      "count": 438,
+      "median_rate": 168.66
+    },
+    "Graphic Design": {
+      "count": 330,
+      "median_rate": 178.22
+    },
+    "Mobile App Development": {
+      "count": 375,
+      "median_rate": 165.15
+    },
+    "SEO / SEM": {
+      "count": 71,
+      "median_rate": 180.89
+    },
+    "Video Editing": {
+      "count": 325,
+      "median_rate": 168.53
+    },
+    "Virtual Assistant": {
+      "count": 197,
+      "median_rate": 179.24
+    },
+    "Web Development": {
+      "count": 545,
+      "median_rate": 161.45
+    }
+  }
+}
