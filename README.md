@@ -1,5 +1,7 @@
 # GigBid — Multi-Agent Freelancer Copilot
 
+**Live Demo:** [https://gigbid-copilot-wnto.onrender.com](https://gigbid-copilot-wnto.onrender.com) *(Click **Reviewer Quick Login (AI/ML Engineer)** on the sign-in screen for preloaded persona access)*
+
 **GigBid** is an end-to-end agentic AI system for freelance marketplace scouting, risk/scam screening, evidence-grounded proposal drafting, pricing strategy, client communication, and human-in-the-loop (HITL) approval.
 
 ## Architecture Highlights
