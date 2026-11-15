@@ -1,48 +1,76 @@
-"""Client Liaison node: classify client intent and draft replies/slots."""
+"""Client Liaison node: classify untrusted client message intent and draft reply via Workspace MCP."""
 from __future__ import annotations
 
+from agent.llm import load_prompt
+from agent.mcp_client import call_mcp_tool
+from agent.safety import delimit_untrusted, detect_injection
 from agent.state import GigBidState
-from agent.handoffs import ComplianceVerdict  # reuse verdict shape for replies
 
 
 def client_liaison_node(state: GigBidState) -> GigBidState:
+    _ = load_prompt("client_liaison")
     message = state.get("client_message", {}) or {}
-    body = message.get("body", "").lower()
-    intent = _classify(body)
+    user_id = state.get("user_id", "default")
+    body = message.get("body", "")
+    _ = delimit_untrusted(body, "untrusted_message")
+    lower = body.lower()
 
-    draft = {"body": "", "intent": intent, "interview_slots": [], "needs_approval": True}
+    intent = _classify(lower)
+    slots: list[str] = []
+    tool_calls = []
+
     if intent == "interview_request":
-        draft["body"] = ("Thank you for your interest. I am available for an interview. "
-                         "Here are some tentative slots I can hold for you.")
-        draft["interview_slots"] = _tentative_slots()
-    elif intent == "question":
-        draft["body"] = ("Thank you for your question. I would be happy to clarify "
-                         "once I have reviewed your project details.")
+        res = call_mcp_tool(
+            "client_liaison",
+            "workspace",
+            "free_calendar_slots",
+            {"user_id": user_id, "date": "tomorrow"},
+        )
+        tool_calls.append({"node": "client_liaison", "tool": "free_calendar_slots", "status": res.get("status")})
+        slots = (res.get("data") or {}).get("slots", [])[:3]
+        reply_body = (
+            "Thanks for reaching out! I would be glad to jump on a call. "
+            f"Here are a few available slots: {', '.join(slots)}. Let me know what works best."
+        )
     elif intent == "negotiation":
-        draft["body"] = ("Thank you for your message. I am open to discussing the "
-                         "budget and scope to find a workable arrangement.")
-    else:  # scam_signal / other
-        draft["body"] = ("Thank you for reaching out. I will review your message and "
-                         "get back to you shortly.")
-        draft["needs_approval"] = True
+        reply_body = (
+            "Thank you for sharing your budget target. I can scope a focused Phase 1 milestone "
+            "that fits your budget while preserving test coverage and documentation."
+        )
+    elif intent == "scam_signal":
+        reply_body = (
+            "For both our protection, I keep all project communication, milestones, and payments "
+            "strictly on-platform. Happy to proceed here!"
+        )
+    elif intent == "question":
+        reply_body = (
+            "Great question — happy to walk through the exact architecture, validation metrics, "
+            "and past case study details here on-platform."
+        )
+    else:
+        reply_body = "Thanks for your message. I have reviewed your note and will follow up with next steps shortly."
 
-    state["intent"] = intent
-    state["reply_draft"] = draft
-    state.setdefault("messages", []).append({"role": "assistant", "body": draft["body"]})
-    return state
+    draft = {
+        "body": reply_body,
+        "intent": intent,
+        "interview_slots": slots,
+        "needs_approval": True,
+    }
+    return {
+        "intent": intent,
+        "reply_draft": draft,
+        "messages": [{"role": "assistant", "body": reply_body}],
+        "tool_calls": tool_calls,
+    }
 
 
 def _classify(body: str) -> str:
-    if any(w in body for w in ["interview", "call", "meet", "zoom", "chat"]):
-        return "interview_request"
-    if any(w in body for w in ["budget", "price", "rate", "cost", "negotiate"]):
-        return "negotiation"
-    if any(w in body for w in ["telegram", "whatsapp", "off-platform", "pay outside"]):
+    if detect_injection(body) or any(w in body for w in ["telegram", "whatsapp", "off-platform", "pay outside"]):
         return "scam_signal"
-    if "?" in body or any(w in body for w in ["how", "what", "can you"]):
+    if any(w in body for w in ["interview", "call", "meet", "zoom", "availability", "slots"]):
+        return "interview_request"
+    if any(w in body for w in ["budget", "price", "rate", "discount", "negotiate"]):
+        return "negotiation"
+    if "?" in body or any(w in body for w in ["how", "what", "can you", "could you"]):
         return "question"
     return "other"
-
-
-def _tentative_slots() -> list[str]:
-    return ["Tomorrow 10:00-11:00", "Tomorrow 14:00-15:00", "Day after 09:00-10:00"]

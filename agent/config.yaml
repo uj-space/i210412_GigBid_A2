@@ -2,17 +2,39 @@ marketplace:
   mode: gigsim
   max_requests_per_minute: 20
 
+rag:
+  variant: v8
+  top_k: 6
+
 models:
   profile: open
-  nodes:
-    scout: qwen3-4b
-    analyst: qwen3-4b
-    risk_assessor: qwen3-4b
-    fit_matcher: qwen3-4b
-    pricing: qwen3-4b
-    writer: configure-your-model
-    critic: configure-your-model
-    client_liaison: configure-your-model
+  profiles:
+    open:
+      base_url_env: OPEN_LLM_BASE_URL
+      api_key_env: OPEN_LLM_API_KEY
+      nodes:
+        scout: qwen3-4b
+        analyst: qwen3-4b
+        risk_assessor: qwen3-4b
+        fit_matcher: qwen3-8b
+        pricing: qwen3-8b
+        writer: qwen3-27b
+        critic: qwen3-27b
+        compliance: qwen3-4b
+        client_liaison: qwen3-27b
+    paid:
+      base_url_env: PAID_LLM_BASE_URL
+      api_key_env: OPENAI_API_KEY
+      nodes:
+        scout: gpt-4o-mini
+        analyst: gpt-4o-mini
+        risk_assessor: gpt-4o-mini
+        fit_matcher: gpt-4o-mini
+        pricing: gpt-4o-mini
+        writer: gpt-4o
+        critic: gpt-4o
+        compliance: gpt-4o-mini
+        client_liaison: gpt-4o
   embeddings: nomic-embed-text
   reranker: bge-reranker-v2-m3
 
@@ -20,7 +42,23 @@ budgets:
   max_graph_steps: 30
   max_revisions: 2
   max_tokens_per_job: 12000
+  p95_latency_budget_s: 15.0
+  cost_budget_usd: 0.05
 
 thresholds:
-  minimum_fit_score: 0.60
+  minimum_fit_score: 0.45
   maximum_risk_score: 0.70
+
+policy:
+  # Configurable marketplace policy rules (absorbs Nov-2 change requests without code edits)
+  min_connects_reserve: 4
+  max_connects_per_bid: 16
+  banned_phrases:
+    - guarantee
+    - 100% refund
+    - pay me outside
+    - telegram
+    - whatsapp
+    - contact me directly
+    - off-platform
+    - crypto wallet

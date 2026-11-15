@@ -1,37 +1,53 @@
-"""Fit Matcher node: map job requirements to verified portfolio evidence."""
+"""Fit Matcher node: map requirements to verified portfolio evidence via Portfolio MCP."""
 from __future__ import annotations
 
-from typing import Any
-from agent.state import GigBidState
 from agent.handoffs import FitReport
-from rag.retriever import retrieve_evidence
+from agent.llm import load_config, load_prompt
+from agent.mcp_client import call_mcp_tool
+from agent.state import GigBidState
 
 
 def fit_matcher_node(state: GigBidState) -> GigBidState:
-    job = state.get("job", {}) or {}
-    job_spec = state.get("job_spec", {}) or {}
-    # Read skills from job directly (analyst and fit_matcher run in parallel,
-    # so job_spec may not be populated yet from analyst)
-    skills = list(job.get("required_skills", []) or [])
-    deliverables = list(job_spec.get("deliverables", []) or [])
-    query = " ".join(skills + deliverables + [job.get("title", "")])
+    _ = load_prompt("fit_matcher")
+    cfg = load_config()
+    top_k = int((cfg.get("rag") or {}).get("top_k", 6))
 
-    evidence = retrieve_evidence(query, k=8, persona=state.get("user_id", "default"))
-    matched = []
-    missing = []
+    job = state.get("job", {}) or {}
+    skills = list(job.get("required_skills", []) or [])
+    persona = state.get("user_id", "default")
+    if persona not in {"ai_ml_engineer", "fullstack_web_dev", "data_analyst"}:
+        persona = "default"
+
+    query = " ".join(skills + [job.get("title", ""), job.get("description", "")[:200]]).strip()
+    res = call_mcp_tool(
+        "fit_matcher",
+        "portfolio",
+        "search_evidence",
+        {"requirement": query or "software engineering", "k": top_k, "filters": {"persona": persona}},
+    )
+    evidence = res.get("data") or []
+
+    matched: list[str] = []
+    missing: list[str] = []
     for s in skills:
-        if any(s.lower() in (e.get("skills", []) or []) or s.lower() in (e.get("text", "").lower())
-               for e in evidence):
+        sl = s.lower()
+        if any(
+            sl in [sk.lower() for sk in (e.get("skills") or [])] or sl in (e.get("text", "").lower())
+            for e in evidence
+        ):
             matched.append(s)
         else:
             missing.append(s)
 
-    score = len(matched) / max(len(skills), 1) if skills else 0.5
+    score = len(matched) / max(len(skills), 1) if skills else (0.6 if evidence else 0.3)
     matrix = []
-    for req in skills + deliverables:
-        supporting = [e.get("evidence_id") or e.get("id") for e in evidence
-                      if req.lower() in (e.get("text", "").lower()
-                                         or " ".join(e.get("skills", [])).lower())]
+    for req in skills[:6]:
+        rl = req.lower()
+        supporting = [
+            e.get("evidence_id") or e.get("id")
+            for e in evidence
+            if rl in [sk.lower() for sk in (e.get("skills") or [])] or rl in (e.get("text", "").lower())
+        ]
         matrix.append({"requirement": req, "evidence_ids": supporting[:3]})
 
     report = FitReport(
@@ -40,8 +56,10 @@ def fit_matcher_node(state: GigBidState) -> GigBidState:
         missing_skills=missing,
         evidence_ids=[e.get("evidence_id") or e.get("id") for e in evidence],
         requirement_matrix=matrix,
-        reasons=f"Matched {len(matched)} of {max(len(skills),1)} required skills.",
+        reasons=f"Matched {len(matched)} of {max(len(skills), 1)} required skills across {len(evidence)} portfolio items.",
     )
-    state["fit_report"] = report.model_dump()
-    state["evidence"] = evidence
-    return state
+    return {
+        "fit_report": report.model_dump(),
+        "evidence": evidence,
+        "tool_calls": [{"node": "fit_matcher", "tool": "search_evidence", "status": res.get("status")}],
+    }
