@@ -263,7 +263,7 @@ function JobInbox({
                 </div>
                 <div className="flex flex-col items-end gap-2 text-right">
                   <span className="text-sm font-semibold text-slate-800">
-                    ${j.budget?.min ?? 0}–${j.budget?.max ?? 0}
+                    ${j.budget?.min ?? j.budget_min ?? 0}–${j.budget?.max ?? j.budget_max ?? 0}
                   </span>
                   <span className="text-xs text-slate-500">{j.connects_cost} Connects</span>
                   <div className="flex gap-2">

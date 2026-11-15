@@ -13,7 +13,10 @@ export interface JobPosting {
   title: string;
   description: string;
   required_skills: string[];
-  budget: { min: number; max: number; currency: string };
+  budget?: { min: number; max: number; currency: string };
+  budget_min?: number;
+  budget_max?: number;
+  currency?: string;
   connects_cost: number;
   client_id: string;
   warning_signals: string[];
