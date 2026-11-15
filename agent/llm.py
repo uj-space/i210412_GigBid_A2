@@ -49,12 +49,18 @@ def get_node_llm(node_name: str, profile: str | None = None):
     api_key = os.environ.get(prof_cfg.get("api_key_env", "OPEN_LLM_API_KEY"), "")
     model_name = get_node_model_name(node_name, prof)
 
-    # Multi-provider routing on `open` profile: Groq for fast nodes, OpenRouter for heavy nodes (with cross-fallback)
+    # Multi-provider routing on `open` profile: Groq (fast), OpenRouter (heavy), NVIDIA NIM (fallback/explicit)
     if prof == "open" and not base_url and not api_key:
         groq_key = os.environ.get("GROQ_API_KEY", "")
         openrouter_key = os.environ.get("OPENROUTER_API_KEY", "")
-        use_groq = (node_name in _FAST_NODES and groq_key) or (groq_key and not openrouter_key)
-        if use_groq:
+        nvidia_key = os.environ.get("NVIDIA_API_KEY", "")
+        preferred = os.environ.get("OPEN_LLM_PROVIDER", "").lower()
+
+        if preferred == "nvidia" and nvidia_key:
+            base_url = os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1")
+            api_key = nvidia_key
+            model_name = os.environ.get("NVIDIA_MODEL", "meta/llama-3.3-70b-instruct")
+        elif (node_name in _FAST_NODES and groq_key) or (groq_key and not openrouter_key and not nvidia_key):
             base_url = os.environ.get("GROQ_BASE_URL", "https://api.groq.com/openai/v1")
             api_key = groq_key
             model_name = os.environ.get(
@@ -65,6 +71,17 @@ def get_node_llm(node_name: str, profile: str | None = None):
             base_url = os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
             api_key = openrouter_key
             model_name = os.environ.get("OPENROUTER_MODEL", "qwen/qwen3-32b:free")
+        elif nvidia_key:
+            base_url = os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1")
+            api_key = nvidia_key
+            model_name = os.environ.get(
+                "NVIDIA_MODEL",
+                "meta/llama-3.1-8b-instruct" if node_name in _FAST_NODES else "meta/llama-3.3-70b-instruct",
+            )
+        elif groq_key:
+            base_url = os.environ.get("GROQ_BASE_URL", "https://api.groq.com/openai/v1")
+            api_key = groq_key
+            model_name = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
 
     if not base_url and not api_key:
         return None

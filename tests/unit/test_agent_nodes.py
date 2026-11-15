@@ -102,3 +102,10 @@ def test_llm_router_groq_and_openrouter(monkeypatch):
     heavy = get_node_llm("writer", profile="open")
     assert fast is not None and "groq.com" in str(fast.openai_api_base)
     assert heavy is not None and "openrouter.ai" in str(heavy.openai_api_base)
+
+    # NVIDIA NIM fallback / explicit provider
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+    monkeypatch.setenv("NVIDIA_API_KEY", "nvapi-test-dummy")
+    nv = get_node_llm("writer", profile="open")
+    assert nv is not None and "nvidia.com" in str(nv.openai_api_base)
