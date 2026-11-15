@@ -1,9 +1,16 @@
+"""V7: HyDE (Hypothetical Document Embeddings — generate ideal proposal snippet, then retrieve)."""
 from __future__ import annotations
 
-from typing import Any
+from rag.variants.v2_hybrid import retrieve as v2_retrieve
 
 
-def retrieve(query, k=5, persona="default"):
-    from rag.variants.v0_naive import retrieve as v0
-    hypo = f"I have built {query or 'this'} using Python and delivered measurable results."
-    return v0(hypo, k=k, persona=persona)
+def _hypothetical_proposal(query: str) -> str:
+    return (
+        f"Case Study delivered production system for {query}. "
+        f"Implemented architecture, testing, deployment, and measurable client outcome won."
+    )
+
+
+def retrieve(query: str, k: int = 5, persona: str = "default"):
+    hyde_query = f"{query} {_hypothetical_proposal(query)}"
+    return v2_retrieve(hyde_query, k=k, persona=persona)

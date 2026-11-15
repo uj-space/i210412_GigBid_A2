@@ -1,23 +1,21 @@
+"""V1: Requirement decomposition (split multi-requirement query, retrieve per requirement, merge)."""
 from __future__ import annotations
 
-from typing import Any
+import re
+from rag.index.hybrid_index import get_index
 
 
-def retrieve(query, k=5, persona="default"):
-    from rag.ingest.ingest import load_portfolio_items
-    items = load_portfolio_items()
-    reqs = [r.strip() for r in (query or "").split(",") if r.strip()] or [query or ""]
-    out = []
-    seen = set()
-    for r in reqs:
-        q = r.lower()
-        for it in items:
-            eid = it.get("evidence_id") or it.get("id")
-            if eid in seen:
-                continue
-            text = it.get("text", "").lower()
-            if q in text or any(w in text for w in q.split() if len(w) > 3):
-                out.append(it)
-                seen.add(eid)
-                break
-    return out[:k]
+def _decompose(query: str) -> list[str]:
+    parts = [p.strip() for p in re.split(r"[,;\n•\-]+|\band\b", query or "", flags=re.I) if len(p.strip()) >= 3]
+    return parts[:6] if parts else [query or ""]
+
+
+def retrieve(query: str, k: int = 5, persona: str = "default"):
+    idx = get_index(persona)
+    subqueries = _decompose(query)
+    merged: dict[int, float] = {}
+    for sq in subqueries:
+        for doc_idx, score in idx.search_dense(sq, k=max(k, 8)):
+            merged[doc_idx] = max(merged.get(doc_idx, 0.0), score)
+    ranked = sorted(merged.items(), key=lambda x: x[1], reverse=True)[:k]
+    return [{**idx.items[i], "_score": round(s, 4)} for i, s in ranked]

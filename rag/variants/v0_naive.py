@@ -1,16 +1,10 @@
+"""V0: Naive dense baseline (cosine similarity on raw chunks)."""
 from __future__ import annotations
 
-from typing import Any
+from rag.index.hybrid_index import get_index
 
 
-def retrieve(query, k=5, persona="default"):
-    from rag.ingest.ingest import load_portfolio_items
-    items = load_portfolio_items()
-    q = (query or "").lower()
-    scored = []
-    for it in items:
-        text = it.get("text", "").lower()
-        score = sum(1 for w in q.split() if w and w in text) / max(len(q.split()), 1)
-        scored.append((score, it))
-    scored.sort(key=lambda x: x[0], reverse=True)
-    return [it for _, it in scored[:k]]
+def retrieve(query: str, k: int = 5, persona: str = "default"):
+    idx = get_index(persona)
+    hits = idx.search_dense(query, k=k)
+    return [{**idx.items[i], "_score": round(s, 4)} for i, s in hits]

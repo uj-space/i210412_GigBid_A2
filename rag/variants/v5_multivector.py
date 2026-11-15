@@ -1,16 +1,20 @@
+"""V5: Multi-vector retrieval (summary, README, and code chunks indexed together, grouped by project)."""
 from __future__ import annotations
 
-from typing import Any
+from rag.index.hybrid_index import get_index
 
 
-def retrieve(query, k=5, persona="default"):
-    from rag.ingest.ingest import load_portfolio_items
-    items = load_portfolio_items()
-    q = (query or "").lower()
-    scored = []
-    for it in items:
-        text = it.get("text", "").lower()
-        score = sum(1 for w in q.split() if w and w in text) / max(len(q.split()), 1)
-        scored.append((score, it))
-    scored.sort(key=lambda x: x[0], reverse=True)
-    return [it for _, it in scored[:k]]
+def retrieve(query: str, k: int = 5, persona: str = "default"):
+    idx = get_index(persona)
+    hits = idx.search_multivector(query, k=max(k * 3, 15))
+    seen_projects: set[str] = set()
+    out = []
+    for doc_idx, score in hits:
+        it = idx.items[doc_idx]
+        proj = it.get("project") or it.get("evidence_id")
+        if proj not in seen_projects or len(out) < k:
+            seen_projects.add(proj)
+            out.append({**it, "_score": round(score, 4)})
+        if len(out) >= k:
+            break
+    return out
