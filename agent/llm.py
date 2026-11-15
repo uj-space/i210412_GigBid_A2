@@ -35,8 +35,11 @@ def get_node_model_name(node_name: str, profile: str | None = None) -> str:
     return (prof_cfg.get("nodes") or {}).get(node_name, "qwen3-4b")
 
 
+_FAST_NODES = {"scout", "analyst", "risk_assessor", "fit_matcher", "pricing", "compliance"}
+
+
 def get_node_llm(node_name: str, profile: str | None = None):
-    """Return a ChatOpenAI client if an open/paid endpoint is configured, else None."""
+    """Return a ChatOpenAI client if an open/paid/Groq/OpenRouter endpoint is configured, else None."""
     cfg = load_config()
     models_cfg = cfg.get("models", {})
     prof = profile or os.environ.get("MODEL_PROFILE") or models_cfg.get("profile", "open")
@@ -44,13 +47,32 @@ def get_node_llm(node_name: str, profile: str | None = None):
 
     base_url = os.environ.get(prof_cfg.get("base_url_env", "OPEN_LLM_BASE_URL"), "")
     api_key = os.environ.get(prof_cfg.get("api_key_env", "OPEN_LLM_API_KEY"), "")
+    model_name = get_node_model_name(node_name, prof)
+
+    # Multi-provider routing on `open` profile: Groq for fast nodes, OpenRouter for heavy nodes (with cross-fallback)
+    if prof == "open" and not base_url and not api_key:
+        groq_key = os.environ.get("GROQ_API_KEY", "")
+        openrouter_key = os.environ.get("OPENROUTER_API_KEY", "")
+        use_groq = (node_name in _FAST_NODES and groq_key) or (groq_key and not openrouter_key)
+        if use_groq:
+            base_url = os.environ.get("GROQ_BASE_URL", "https://api.groq.com/openai/v1")
+            api_key = groq_key
+            model_name = os.environ.get(
+                "GROQ_MODEL",
+                "llama-3.1-8b-instant" if node_name in _FAST_NODES else "llama-3.3-70b-versatile",
+            )
+        elif openrouter_key:
+            base_url = os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
+            api_key = openrouter_key
+            model_name = os.environ.get("OPENROUTER_MODEL", "qwen/qwen3-32b:free")
+
     if not base_url and not api_key:
         return None
     try:
         from langchain_openai import ChatOpenAI
 
         return ChatOpenAI(
-            model=get_node_model_name(node_name, prof),
+            model=model_name,
             base_url=base_url or None,
             api_key=api_key or "ollama",
             temperature=0.2,

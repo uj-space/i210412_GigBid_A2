@@ -88,3 +88,17 @@ def test_pricing_node_uses_market_band():
     q = res["price_quote"]
     assert 800 <= q["suggested_bid"] <= 2400
     assert q["connects_cost"] == 6
+
+
+def test_llm_router_groq_and_openrouter(monkeypatch):
+    from agent.llm import get_node_llm
+
+    monkeypatch.delenv("OPEN_LLM_BASE_URL", raising=False)
+    monkeypatch.delenv("OPEN_LLM_API_KEY", raising=False)
+    monkeypatch.setenv("GROQ_API_KEY", "gsk_test_dummy")
+    monkeypatch.setenv("OPENROUTER_API_KEY", "sk-or-test-dummy")
+
+    fast = get_node_llm("scout", profile="open")
+    heavy = get_node_llm("writer", profile="open")
+    assert fast is not None and "groq.com" in str(fast.openai_api_base)
+    assert heavy is not None and "openrouter.ai" in str(heavy.openai_api_base)
