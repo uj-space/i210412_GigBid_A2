@@ -53,7 +53,7 @@ async function request<T>(url: string, init?: RequestInit): Promise<T> {
 export const apiClient = {
   health: () => request<HealthResponse>('/api/health'),
   login: (name: string, persona: string) =>
-    request<{ token: string; user: { id: string; name: string; persona: string } }>('/api/auth/login', {
+    request<{ token: string; user_id?: string; name?: string; persona?: string; user?: { id: string; name: string; persona: string } }>('/api/auth/login', {
       method: 'POST',
       body: JSON.stringify({ name, persona }),
     }),
@@ -95,7 +95,7 @@ export const apiClient = {
   getConnects: () => request<{ balance: number; reserved: number }>('/api/connects'),
   getSettings: () => request<Record<string, any>>('/api/settings'),
   updateSettings: (payload: Record<string, any>) =>
-    request<Record<string, any>>('/api/settings', { method: 'POST', body: JSON.stringify(payload) }),
+    request<Record<string, any>>('/api/settings', { method: 'PUT', body: JSON.stringify(payload) }),
   getMemory: (userId = 'default') => request<Record<string, any>>(`/api/memory?user_id=${encodeURIComponent(userId)}`),
   deleteMemory: (userId = 'default', kind?: string) =>
     request<Record<string, any>>(

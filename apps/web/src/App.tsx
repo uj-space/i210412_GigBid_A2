@@ -819,7 +819,13 @@ export default function App() {
   const login = async (name: string, persona: string) => {
     const res = await apiClient.login(name, persona);
     localStorage.setItem('gigbid_token', res.token);
-    setUser(res.user);
+    setUser(
+      res.user || {
+        id: res.user_id || res.persona || 'default',
+        name: res.name || name,
+        persona: res.persona || persona,
+      }
+    );
   };
 
   const logout = () => {
