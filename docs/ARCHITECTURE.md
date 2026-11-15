@@ -1,30 +1,41 @@
-# Architecture
+# GigBid Architecture
 
-## Overview
-GigBid is a multi-agent freelancer copilot built with LangGraph, MCP servers,
-and a React frontend. The system connects to GigSim for development and
-Upwork's official MCP server for live use.
+GigBid is a multi-agent freelancer copilot built on **LangGraph**, **Model Context Protocol (MCP)**, **Hybrid + Rerank RAG**, **FastAPI**, and **React + TypeScript**.
 
-## Components
+## System Layers
 
-### Bid Graph (one thread per job)
-Scout → [Analyst || Risk Assessor || Fit Matcher] → Decision → Pricing → Writer → Critic → Compliance → Approval Gate
+```
++-----------------------+       SSE / REST        +---------------------------+
+| React + TS Web UI     | <---------------------> | FastAPI Backend (apps/api)|
+| (9 screens + HITL)    |                         | Auth, Approvals, Runs     |
++-----------------------+                         +-------------+-------------+
+                                                                |
++-----------------------+                                       v
+| Background Worker     |                         +---------------------------+
+| (worker/run.py)       | ----------------------> | LangGraph Workflows       |
++-----------------------+                         | bid_graph & conv_graph    |
+                                                  +-------------+-------------+
+                                                                |
+          +-----------------------+-----------------------------+-----------------------+
+          v                       v                             v                       v
++-------------------+   +-------------------+       +-------------------+   +-------------------+
+| Portfolio MCP     |   | Marketplace MCP   |       | Workspace MCP     |   | RAG & Verifier    |
+| (Read-only)       |   | (GigSim / Upwork) |       | (Cal / Email)     |   | (V0-V9 + Verify)  |
++-------------------+   +-------------------+       +-------------------+   +-------------------+
+```
 
-### Conversation Graph (one thread per client)
-Client Liaison → Approval Gate
+## LangGraph Orchestration (`agent/graphs/bid_graph.py`)
 
-### MCP Servers
-- Portfolio: read-only evidence search, case studies, skills
-- Marketplace: read/write tools with idempotency and dry_run
-- Workspace: calendar slots, interview holds, email drafts
+1. **Scout (`scout_node`)**: Normalizes job posting and saved-search context.
+2. **Parallel Fan-Out (`Send`)**: Runs `analyst_node`, `risk_assessor_node`, and `fit_matcher_node` concurrently.
+3. **Decision (`_decision_node`)**: Routes scam or low-fit jobs directly to `skip -> END`; routes qualified jobs (`bid`/`watch`) to `pricing_node`.
+4. **Pricing (`pricing_node`)**: Queries Kaggle contract market medians (`data/market/market_pricing_stats.json`) and Connects balance via Marketplace MCP.
+5. **Writer (`writer_node`) & Critic (`critic_node`)**: Drafts grounded proposals using RAG (`rag/retriever.py`), prunes unsupported claims (`rag/verify.py`), and runs a bounded revision loop (`max 2` revisions) with a step/token budget guard (`needs_attention`).
+6. **Compliance (`compliance_node`) & Approval Gate (`_approval_gate`)**: Enforces policy rules and pauses via LangGraph `interrupt()` until the human approves, edits (with compliance re-check), or rejects.
 
-### Data Stores
-- Postgres: checkpointer, memory store, user data
-- Redis: caching, rate limiting, task queue
-- ChromaDB: vector store for RAG
+## Trust Boundaries & Safety
 
-## Key Design Decisions
-- All marketplace access through one port (R1)
-- Policies in config.yaml, not hard-coded
-- Human approval before any external action (R4)
-- Claims verified against portfolio evidence (R5)
+- Untrusted marketplace text is wrapped in `<untrusted_job_post>` delimiters (`agent/safety.py`).
+- PII (`email`, `phone`, `payment`) is masked in logs and traces via `mask_pii()`.
+- Per-agent allowlists (`AGENT_TOOL_ALLOWLISTS` in `agent/mcp_client.py`) restrict write tools exclusively to approved execution paths.
+- Every marketplace write requires an `idempotency_key` and writes an append-only record to `data/processed/mcp_audit.jsonl`.
