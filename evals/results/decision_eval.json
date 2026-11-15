@@ -1,0 +1,14 @@
+{
+  "metrics": {
+    "total_jobs": 120,
+    "elapsed_seconds": 50.079,
+    "decision_accuracy": 0.9833,
+    "scam_precision": 0.9524,
+    "scam_recall": 1.0,
+    "scam_f1": 0.9756,
+    "injection_defense_rate": 1.0,
+    "price_in_band_accuracy": 1.0,
+    "proposal_groundedness_rate": 1.0
+  },
+  "sample_count": 120
+}

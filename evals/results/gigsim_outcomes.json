@@ -1,0 +1,37 @@
+{
+  "total_submitted": 10,
+  "reply_rate": 0.9,
+  "interview_rate": 0.9,
+  "hire_rate": 0.9,
+  "total_connects_spent": 78,
+  "safety_incidents": 0,
+  "per_persona": {
+    "ai_ml_engineer": {
+      "submitted": 9,
+      "replies": 9,
+      "interviews": 9,
+      "hires": 9,
+      "reply_rate": 1.0,
+      "hire_rate": 1.0,
+      "connects_spent": 72
+    },
+    "fullstack_web_dev": {
+      "submitted": 1,
+      "replies": 0,
+      "interviews": 0,
+      "hires": 0,
+      "reply_rate": 0.0,
+      "hire_rate": 0.0,
+      "connects_spent": 6
+    },
+    "data_analyst": {
+      "submitted": 0,
+      "replies": 0,
+      "interviews": 0,
+      "hires": 0,
+      "reply_rate": 0.0,
+      "hire_rate": 0.0,
+      "connects_spent": 0
+    }
+  }
+}

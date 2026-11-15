@@ -1,0 +1,45 @@
+{
+  "num_queries": 336,
+  "factors": {
+    "dense_only_v0": {
+      "evidence_recall_at_5": 0.5685,
+      "ndcg_at_10": 0.505,
+      "unsupported_rate_before": 0.5,
+      "unsupported_rate_after": 0.0
+    },
+    "bm25_only": {
+      "evidence_recall_at_5": 0.9623,
+      "ndcg_at_10": 0.9543
+    },
+    "hybrid_rrf_v2": {
+      "evidence_recall_at_5": 0.7034,
+      "ndcg_at_10": 0.7923,
+      "unsupported_rate_before": 0.5,
+      "unsupported_rate_after": 0.0
+    },
+    "hybrid_plus_rerank_v3": {
+      "evidence_recall_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "unsupported_rate_before": 0.5,
+      "unsupported_rate_after": 0.0
+    },
+    "outcome_aware_v4": {
+      "evidence_recall_at_5": 0.9673,
+      "ndcg_at_10": 0.8697,
+      "unsupported_rate_before": 0.5,
+      "unsupported_rate_after": 0.0
+    },
+    "corrective_self_rag_v8": {
+      "evidence_recall_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "unsupported_rate_before": 0.5,
+      "unsupported_rate_after": 0.0
+    }
+  },
+  "deltas": {
+    "hybrid_vs_dense_recall_delta": 0.1349,
+    "rerank_vs_hybrid_ndcg_delta": 0.2077,
+    "outcome_vs_rerank_ndcg_delta": -0.1303,
+    "claim_verifier_unsupported_reduction": 0.5
+  }
+}

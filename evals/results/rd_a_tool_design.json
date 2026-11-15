@@ -1,0 +1,15 @@
+{
+  "monolithic_unconstrained": {
+    "write_tool_exposures_across_roles": 36,
+    "duplicate_submit_prevented": false,
+    "dry_run_preview_supported": false,
+    "least_privilege_score": 0.0
+  },
+  "modular_typed_mcp": {
+    "write_tool_exposures_across_roles": 2,
+    "blast_radius_reduction_pct": 94.44,
+    "duplicate_submit_prevented": true,
+    "dry_run_preview_supported": true,
+    "least_privilege_score": 0.9444
+  }
+}

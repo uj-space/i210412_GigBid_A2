@@ -1,0 +1,15 @@
+{
+  "num_jobs": 90,
+  "single_agent_baseline": {
+    "decision_accuracy": 0.6222,
+    "scam_recall": 0.0,
+    "avg_unsupported_claim_rate": 0.1667,
+    "avg_latency_ms": 27.95
+  },
+  "multi_agent_langgraph": {
+    "decision_accuracy": 0.9889,
+    "scam_recall": 1.0,
+    "avg_unsupported_claim_rate": 0.0,
+    "avg_latency_ms": 593.73
+  }
+}

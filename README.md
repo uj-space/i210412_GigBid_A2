@@ -11,6 +11,29 @@
 - **Part D — FastAPI Backend & 9-Screen React UI (`apps/api/`, `apps/web/`)**: 21 OpenAPI endpoints, live SSE run streaming, typed TypeScript client, `EvidenceHover` claim tooltips, and `DegradedBanner` outage handling.
 - **Part E — Worker, Infra, CI & Academic Evals (`worker/`, `infra/`, `.github/`, `evals/`, `docs/`)**: Scheduled background worker, Docker Compose stack, GitHub Actions CI/Eval workflows, and full R&D evaluation suite.
 
+## Measured Evaluation Results
+
+### RAG Variants (`evals/results/rag_eval.json`, `n = 336` dev queries)
+| Variant | Strategy | Recall@5 | nDCG@10 | MRR | Unsupp (Pre -> Post) | Latency (ms) |
+|---|---|---:|---:|---:|---:|---:|
+| `v0` | Naive Dense (TF-IDF+SVD) | 0.5685 | 0.5050 | 0.5233 | 0.5000 -> 0.0000 | 7.717 |
+| `v2` | Hybrid Dense + BM25 (RRF) | 0.7034 | 0.7923 | 0.8139 | 0.5000 -> 0.0000 | 2.140 |
+| **`v3`** | **Hybrid + Skill/Type Rerank** | **1.0000** | **1.0000** | **1.0000** | **0.5000 -> 0.0000** | **4.870** |
+| `v4` | Outcome-Aware Rerank | 0.9673 | 0.8697 | 0.8633 | 0.5000 -> 0.0000 | 9.794 |
+| `v7` | HyDE Hypothetical Snippet | 0.9583 | 0.9522 | 1.0000 | 0.5000 -> 0.0000 | 4.297 |
+| **`v8`** | **Corrective Self-RAG** | **1.0000** | **1.0000** | **1.0000** | **0.5000 -> 0.0000** | **5.634** |
+| `v9` | Skill-Industry GraphRAG | 0.8413 | 0.7863 | 0.7999 | 0.5000 -> 0.0000 | 0.259 |
+
+### Single-Agent vs. Multi-Agent LangGraph (`evals/results/rd_c_agent_comparison.json`, `n = 90`)
+| Architecture | Decision Accuracy | Scam Recall | Unsupported Rate | Avg Latency (ms) |
+|---|---:|---:|---:|---:|
+| Single-Agent Baseline | 0.6222 | 0.0000 | 0.1667 | 27.95 |
+| **Multi-Agent LangGraph (`bid_graph`)** | **0.9889** | **1.0000** | **0.0000** | **593.73** |
+
+### MCP Tool Design (`evals/results/rd_a_tool_design.json`) & Safety (`evals/results/decision_eval.json`)
+- **Blast-Radius Reduction:** `94.44%` (`36` → `2` write-tool exposures across 9 agent roles), `100%` duplicate-submit prevention (`idempotency_key`), `dry_run` preview supported.
+- **Decision & Safety (`n = 120`):** `decision_accuracy = 0.9833`, `scam_recall = 1.0`, `injection_defense_rate = 1.0`, `price_in_band_accuracy = 1.0`, `proposal_groundedness_rate = 1.0`.
+
 ## Quickstart
 
 ### 1. Local Python & Web Setup

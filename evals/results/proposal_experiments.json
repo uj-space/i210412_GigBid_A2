@@ -1,0 +1,20 @@
+{
+  "num_jobs": 30,
+  "strategies": {
+    "short_punchy": {
+      "avg_word_count": 11.9,
+      "avg_citations_per_proposal": 1.0,
+      "unsupported_rate_after_verify": 0.0
+    },
+    "evidence_bulleted": {
+      "avg_word_count": 71.9,
+      "avg_citations_per_proposal": 3.0,
+      "unsupported_rate_after_verify": 0.0
+    },
+    "detailed_technical": {
+      "avg_word_count": 50.7,
+      "avg_citations_per_proposal": 1.0,
+      "unsupported_rate_after_verify": 0.0
+    }
+  }
+}
