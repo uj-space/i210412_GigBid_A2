@@ -91,7 +91,44 @@ def test_degraded_mode_toggle_and_banner_signal():
 def test_analytics_pipeline_messages_and_settings():
     assert client.get("/api/analytics").status_code == 200
     assert client.get("/api/pipeline").status_code == 200
-    assert client.get("/api/messages").status_code == 200
+    msgs = client.get("/api/messages")
+    assert msgs.status_code == 200
+    msg_list = msgs.json()["messages"]
+    assert len(msg_list) >= 1
+
+    # Full Messages Inbox -> Draft AI Reply -> Approve & Send flow
+    resp = client.post(
+        "/api/messages/respond",
+        json={"client_message": msg_list[0], "user_id": "msg-test-user"},
+    )
+    assert resp.status_code == 200
+    tid = resp.json()["thread_id"]
+    assert resp.json()["needs_approval"] is True
+
+    app_msg = client.post(
+        "/api/messages/approve",
+        json={"thread_id": tid, "action": "edited", "edit": {"body": "Sounds great, let us meet tomorrow at 10am UTC."}},
+    )
+    assert app_msg.status_code == 200
+    assert app_msg.json()["result"]["approval_status"] == "edited"
+
     assert client.get("/api/connects").status_code == 200
-    assert client.get("/api/settings").status_code == 200
-    assert client.get("/api/memory").status_code == 200
+
+    # Settings PUT + GET
+    put_s = client.put("/api/settings", json={"rag_variant": "v3", "rate_floor": 55})
+    assert put_s.status_code == 200
+    get_s = client.get("/api/settings")
+    assert get_s.status_code == 200
+    assert get_s.json()["settings"]["rag_variant"] == "v3"
+
+    # Long-Term Memory GET + DELETE
+    from agent.memory.store import get_memory_store
+
+    store = get_memory_store()
+    store.record_outcome("mem-test-user", "ai_ml", "won", evidence_count=1)
+    m_before = client.get("/api/memory?user_id=mem-test-user").json()
+    assert len(m_before["outcome"]) >= 1
+    del_m = client.delete("/api/memory?user_id=mem-test-user")
+    assert del_m.status_code == 200
+    m_after = client.get("/api/memory?user_id=mem-test-user").json()
+    assert m_after["style"] == [] and m_after["outcome"] == []

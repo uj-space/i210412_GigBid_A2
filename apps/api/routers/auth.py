@@ -29,6 +29,13 @@ async def read_settings(authorization: str | None = Header(None)):
 @router.put("/settings")
 async def save_settings(payload: dict, authorization: str | None = Header(None)):
     uid = get_user_id_from_header(authorization)
+    if isinstance(payload.get("rag_variant"), str):
+        try:
+            from rag.retriever import set_variant
+
+            set_variant(payload["rag_variant"])
+        except ValueError:
+            pass
     return {"settings": update_user_settings(uid, payload)}
 
 

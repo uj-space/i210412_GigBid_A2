@@ -565,43 +565,77 @@ function PipelineBoard() {
 }
 
 function MessagesInbox() {
+  const { user } = useAuth();
   const [messages, setMessages] = useState<any[]>([]);
   const [replyState, setReplyState] = useState<any>(null);
   const [draftBody, setDraftBody] = useState('');
+  const [originalBody, setOriginalBody] = useState('');
+  const [statusMsg, setStatusMsg] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     apiClient.getMessages().then((d) => setMessages(d.messages || [])).catch(() => {});
   }, []);
 
   const draftReply = async (m: any) => {
-    const res = await apiClient.respondMessage(m);
-    setReplyState(res);
-    setDraftBody(res?.result?.reply_draft?.body || '');
+    setLoading(true);
+    setStatusMsg('');
+    try {
+      const res = await apiClient.respondMessage(m, user?.id || 'default');
+      const body = res?.result?.reply_draft?.body || '';
+      setReplyState(res);
+      setDraftBody(body);
+      setOriginalBody(body);
+    } catch (err: any) {
+      setStatusMsg(`Failed to draft reply: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const approveReply = async (action: 'approved' | 'rejected') => {
     if (!replyState?.thread_id) return;
-    await apiClient.approveMessage(replyState.thread_id, action, draftBody);
-    setReplyState(null);
+    setLoading(true);
+    try {
+      const finalAction = action === 'approved' && draftBody !== originalBody ? 'edited' : action;
+      const resp = await apiClient.approveMessage(replyState.thread_id, finalAction, draftBody);
+      const st = resp?.result?.approval_status || finalAction;
+      setStatusMsg(`Reply ${st} successfully.`);
+      setReplyState(null);
+    } catch (err: any) {
+      setStatusMsg(`Action failed: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="space-y-4">
       <h2 className="text-2xl font-bold text-slate-800">Messages Inbox</h2>
+      {statusMsg && (
+        <div className="rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm text-indigo-800">
+          {statusMsg}
+        </div>
+      )}
       <div className="grid gap-4 lg:grid-cols-2">
         <div className="space-y-3">
-          {messages.map((m, i) => (
-            <div key={i} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-              <div className="text-xs font-semibold text-indigo-600">Client {m.client_id}</div>
-              <p className="mt-1 text-sm text-slate-700">{m.body}</p>
-              <button
-                onClick={() => draftReply(m)}
-                className="mt-2 rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-medium text-white"
-              >
-                Draft AI Reply
-              </button>
-            </div>
-          ))}
+          {messages.length === 0 ? (
+            <p className="text-sm text-slate-500">No client messages found.</p>
+          ) : (
+            messages.map((m, i) => (
+              <div key={i} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <div className="text-xs font-semibold text-indigo-600">Client {m.client_id}</div>
+                <p className="mt-1 text-sm text-slate-700">{m.body}</p>
+                <button
+                  disabled={loading}
+                  onClick={() => draftReply(m)}
+                  className="mt-2 rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-indigo-700 disabled:opacity-60"
+                >
+                  {loading ? 'Drafting…' : 'Draft AI Reply'}
+                </button>
+              </div>
+            ))
+          )}
         </div>
         {replyState && (
           <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -614,14 +648,16 @@ function MessagesInbox() {
             />
             <div className="flex gap-2">
               <button
+                disabled={loading}
                 onClick={() => approveReply('approved')}
-                className="rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white"
+                className="rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-emerald-700 disabled:opacity-60"
               >
                 Approve & Send
               </button>
               <button
+                disabled={loading}
                 onClick={() => approveReply('rejected')}
-                className="rounded-lg bg-rose-600 px-3 py-1.5 text-xs font-medium text-white"
+                className="rounded-lg bg-rose-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-rose-700 disabled:opacity-60"
               >
                 Reject
               </button>
@@ -723,6 +759,19 @@ function Analytics() {
   );
 }
 
+const RAG_VARIANT_OPTIONS: { id: string; label: string }[] = [
+  { id: 'v0', label: 'V0 — Naive Dense (TF-IDF + SVD)' },
+  { id: 'v1', label: 'V1 — Requirement-Decomposed' },
+  { id: 'v2', label: 'V2 — Hybrid Dense + BM25 (RRF)' },
+  { id: 'v3', label: 'V3 — Hybrid + Skill/Type Rerank (Recommended)' },
+  { id: 'v4', label: 'V4 — Outcome-Aware Rerank' },
+  { id: 'v5', label: 'V5 — Multi-Vector Sub-fields' },
+  { id: 'v6', label: 'V6 — Contextual Headers' },
+  { id: 'v7', label: 'V7 — HyDE Hypothetical Snippet' },
+  { id: 'v8', label: 'V8 — Corrective Self-RAG (Recommended)' },
+  { id: 'v9', label: 'V9 — Skill-Industry GraphRAG' },
+];
+
 function Settings({
   degraded,
   onToggleDegraded,
@@ -731,21 +780,45 @@ function Settings({
   onToggleDegraded: (flag: boolean) => void;
 }) {
   const { user } = useAuth();
-  const [variant, setVariant] = useState('v8');
+  const [variant, setVariant] = useState('v3');
   const [floor, setFloor] = useState(40);
   const [memory, setMemory] = useState<any>({ style: [], outcome: [] });
+  const [settingsMsg, setSettingsMsg] = useState('');
 
   useEffect(() => {
-    apiClient.getSettings().then((s) => {
-      if (s.rag_variant) setVariant(s.rag_variant);
-      if (s.rate_floor) setFloor(s.rate_floor);
-    }).catch(() => {});
+    apiClient
+      .getSettings()
+      .then((s) => {
+        const cfg = s.settings || s;
+        if (cfg.rag_variant) setVariant(cfg.rag_variant);
+        if (cfg.rate_floor) setFloor(cfg.rate_floor);
+        if (s.style_memory || s.outcome_memory) {
+          setMemory({ style: s.style_memory || [], outcome: s.outcome_memory || [] });
+        }
+      })
+      .catch(() => {});
     apiClient.getMemory(user?.id || 'default').then(setMemory).catch(() => {});
   }, [user?.id]);
+
+  const handleSave = async () => {
+    await apiClient.updateSettings({ rag_variant: variant, rate_floor: floor });
+    setSettingsMsg(`Saved (active RAG: ${variant.toUpperCase()}, floor: $${floor}/hr).`);
+  };
+
+  const handleClearMemory = async () => {
+    await apiClient.deleteMemory(user?.id || 'default');
+    setMemory({ style: [], outcome: [] });
+    setSettingsMsg('Long-term memory cleared.');
+  };
 
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-slate-800">Settings</h2>
+      {settingsMsg && (
+        <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm text-emerald-800">
+          {settingsMsg}
+        </div>
+      )}
       <div className="grid gap-4 md:grid-cols-2">
         <div className="space-y-3 rounded-xl border bg-white p-5 shadow-sm">
           <h3 className="font-semibold">Agent & RAG Configuration</h3>
@@ -755,8 +828,10 @@ function Settings({
             onChange={(e) => setVariant(e.target.value)}
             className="w-full rounded-lg border px-3 py-2 text-sm"
           >
-            {['v0', 'v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9'].map((v) => (
-              <option key={v} value={v}>{v.toUpperCase()}</option>
+            {RAG_VARIANT_OPTIONS.map((v) => (
+              <option key={v.id} value={v.id}>
+                {v.label}
+              </option>
             ))}
           </select>
           <label className="block text-xs text-slate-500">Hourly Rate Floor ($)</label>
@@ -768,8 +843,8 @@ function Settings({
           />
           <div className="flex gap-2">
             <button
-              onClick={() => apiClient.updateSettings({ rag_variant: variant, rate_floor: floor })}
-              className="rounded-lg bg-indigo-600 px-4 py-2 text-xs font-medium text-white"
+              onClick={handleSave}
+              className="rounded-lg bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
             >
               Save Settings
             </button>
@@ -785,18 +860,29 @@ function Settings({
         <div className="space-y-3 rounded-xl border bg-white p-5 shadow-sm">
           <div className="flex items-center justify-between">
             <h3 className="font-semibold">Long-Term Memory (Style & Outcome)</h3>
-            <button
-              onClick={() => apiClient.deleteMemory(user?.id || 'default').then(() => setMemory({ style: [], outcome: [] }))}
-              className="text-xs text-rose-600 hover:underline"
-            >
+            <button onClick={handleClearMemory} className="text-xs text-rose-600 hover:underline">
               Clear Memory
             </button>
           </div>
           <div className="text-xs text-slate-600">
             <strong>Style Rules:</strong> {(memory.style || []).length}
+            {(memory.style || []).length > 0 && (
+              <ul className="mt-1 list-disc pl-4 text-slate-500">
+                {(memory.style || []).map((r: any, idx: number) => (
+                  <li key={idx}>{r.text || JSON.stringify(r)}</li>
+                ))}
+              </ul>
+            )}
           </div>
           <div className="text-xs text-slate-600">
             <strong>Outcome Records:</strong> {(memory.outcome || []).length}
+            {(memory.outcome || []).length > 0 && (
+              <ul className="mt-1 list-disc pl-4 text-slate-500">
+                {(memory.outcome || []).map((o: any, idx: number) => (
+                  <li key={idx}>{o.category}: {o.outcome}</li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>

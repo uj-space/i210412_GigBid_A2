@@ -86,7 +86,7 @@ export const apiClient = {
   respondMessage: (message: Record<string, any>, userId = 'default') =>
     request<Record<string, any>>('/api/messages/respond', {
       method: 'POST',
-      body: JSON.stringify({ message, user_id: userId }),
+      body: JSON.stringify({ client_message: message, user_id: userId }),
     }),
   approveMessage: (threadId: string, action: string, editBody?: string) =>
     request<Record<string, any>>('/api/messages/approve', {
