@@ -1,0 +1,91 @@
+[
+  {
+    "job_id": "SYNTHETIC_synth-001",
+    "title": "Build ML churn prediction model",
+    "description": "Need ML engineer for customer churn prediction using Python/pandas/scikit-learn",
+    "required_skills": [
+      "Python",
+      "pandas",
+      "scikit-learn"
+    ],
+    "budget": {
+      "min": 500,
+      "max": 2000,
+      "currency": "USD"
+    },
+    "connects_cost": 6,
+    "client_id": "synth-client-1",
+    "warning_signals": [],
+    "posted_at": "2024-01-15",
+    "source": "synthetic",
+    "is_real_data": false,
+    "raw": {}
+  },
+  {
+    "job_id": "SYNTHETIC_synth-002",
+    "title": "React dashboard for analytics",
+    "description": "Build a modern dashboard with React, TypeScript, and D3.js charts",
+    "required_skills": [
+      "React",
+      "TypeScript",
+      "D3.js"
+    ],
+    "budget": {
+      "min": 800,
+      "max": 3000,
+      "currency": "USD"
+    },
+    "connects_cost": 8,
+    "client_id": "synth-client-2",
+    "warning_signals": [],
+    "posted_at": "2024-01-16",
+    "source": "synthetic",
+    "is_real_data": false,
+    "raw": {}
+  },
+  {
+    "job_id": "SYNTHETIC_synth-003",
+    "title": "API development with FastAPI",
+    "description": "Create REST APIs for a SaaS platform",
+    "required_skills": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL"
+    ],
+    "budget": {
+      "min": 1000,
+      "max": 4000,
+      "currency": "USD"
+    },
+    "connects_cost": 10,
+    "client_id": "synth-client-3",
+    "warning_signals": [],
+    "posted_at": "2024-01-17",
+    "source": "synthetic",
+    "is_real_data": false,
+    "raw": {}
+  },
+  {
+    "job_id": "SYNTHETIC_synth-004",
+    "title": "SCAM - Unpaid work needed",
+    "description": "Unpaid test project first. Need work done for free trial.",
+    "required_skills": [
+      "Python",
+      "React"
+    ],
+    "budget": {
+      "min": 0,
+      "max": 0,
+      "currency": "USD"
+    },
+    "connects_cost": 4,
+    "client_id": "synth-scam-1",
+    "warning_signals": [
+      "unpaid_work"
+    ],
+    "posted_at": "2024-01-18",
+    "source": "synthetic",
+    "is_real_data": false,
+    "raw": {}
+  }
+]
