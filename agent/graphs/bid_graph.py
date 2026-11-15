@@ -2,9 +2,16 @@
 from __future__ import annotations
 
 from typing import Any
+import os
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.types import interrupt
+
+try:
+    from langgraph.checkpoint.postgres import PostgresSaver
+    _HAS_POSTGRES = True
+except ImportError:
+    _HAS_POSTGRES = False
 
 from agent.state import GigBidState
 from agent.nodes import scout, analyst, risk_assessor, fit_matcher, pricing, writer, critic, compliance
@@ -47,9 +54,17 @@ def _approval_gate(state: GigBidState) -> GigBidState:
     return state
 
 
+def _get_checkpointer():
+    """Get Postgres checkpointer if DATABASE_URL is set, else MemorySaver."""
+    db_url = os.environ.get("DATABASE_URL")
+    if db_url and _HAS_POSTGRES:
+        return PostgresSaver.from_conn_string(db_url)
+    return MemorySaver()
+
+
 def build_bid_graph(checkpointer=None):
     if checkpointer is None:
-        checkpointer = MemorySaver()
+        checkpointer = _get_checkpointer()
     builder = StateGraph(GigBidState)
     builder.add_node("scout", scout.scout_node)
     builder.add_node("analyst", analyst.analyst_node)

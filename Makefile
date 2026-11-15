@@ -1,4 +1,5 @@
-.PHONY: install api test lint eval
+.PHONY: install api test lint eval seed demo lint
+
 install:
 	python -m pip install -e ".[dev]"
 
@@ -12,4 +13,9 @@ lint:
 	ruff check .
 
 eval:
-	python -m evals.runners.run_demo_eval
+	python -m evals.runners.rag_eval
+	python -m evals.runners.decision_eval
+
+seed:
+	python -m scripts.seed_dev_set
+

@@ -1,1 +1,0 @@
-"""GigBid FastAPI backend."""

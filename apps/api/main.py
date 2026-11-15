@@ -12,6 +12,7 @@ from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 import json
 import uuid
+import asyncio
 
 from agent.graphs.bid_graph import build_bid_graph, run_bid
 from agent.graphs.conversation_graph import build_conversation_graph, run_conversation
@@ -137,9 +138,26 @@ async def messages_respond(req: MessageRequest, authorization: str | None = Head
 
 @app.get("/api/runs/{thread_id}/stream")
 async def stream_run(thread_id: str, authorization: str | None = Header(None)):
-    def event_stream():
+    """SSE stream of LangGraph run events for the given thread."""
+    
+    async def event_stream():
         yield f"data: {json.dumps({'type': 'run_start', 'thread_id': thread_id})}\n\n"
-        yield f"data: {json.dumps({'type': 'note', 'message': 'run streamed via LangGraph stream modes'})}\n\n"
+        
+        try:
+            graph = build_bid_graph()
+            config = {"configurable": {"thread_id": thread_id}}
+            
+            async for event in graph.astream(
+                {},
+                config=config,
+                stream_mode="updates",
+            ):
+                for node_name, node_output in event.items():
+                    yield f"data: {json.dumps({'type': 'node_update', 'node': node_name, 'output': str(node_output)[:500]})}\n\n"
+                    await asyncio.sleep(0.1)
+        except Exception as e:
+            yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
+        
         yield f"data: {json.dumps({'type': 'run_end', 'thread_id': thread_id})}\n\n"
 
     return StreamingResponse(event_stream(), media_type="text/event-stream")
