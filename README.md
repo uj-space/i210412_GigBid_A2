@@ -65,4 +65,14 @@ python -m evals.runners.proposal_experiments
 ```
 
 ## Datasets & Documentation
-See [docs/DATA_CARD.md](docs/DATA_CARD.md) for full attribution of the 6 Kaggle datasets and synthetic persona/dev-set generation, [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/TOOLS.md](docs/TOOLS.md), [docs/RUNBOOK.md](docs/RUNBOOK.md), [docs/AI_USAGE.md](docs/AI_USAGE.md), and [docs/R_AND_D_REPORT.md](docs/R_AND_D_REPORT.md).
+See [docs/DATA_CARD.md](docs/DATA_CARD.md) for full attribution of the 6 Kaggle datasets and synthetic persona/dev-set generation, [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/TOOLS.md](docs/TOOLS.md), [docs/RUNBOOK.md](docs/RUNBOOK.md), [docs/AI_USAGE.md](docs/AI_USAGE.md), [docs/R_AND_D_REPORT.md](docs/R_AND_D_REPORT.md), [docs/GigBid_RD_Report.pdf](docs/GigBid_RD_Report.pdf), and [docs/TECHNICAL_WRITEUP.md](docs/TECHNICAL_WRITEUP.md).
+
+## Portfolio MCP Server (`uvx` / Docker)
+```bash
+uvx --from git+https://github.com/uj-space/i210412_GigBid_A2 gigbid-portfolio-mcp
+```
+See [mcp_servers/portfolio/README.md](mcp_servers/portfolio/README.md) for `stdio`, Streamable HTTP, and Docker usage.
+
+## Résumé Bullet
+- Engineered **GigBid**, a LangGraph multi-agent copilot with three isolated MCP servers and human-in-the-loop `interrupt()` gates, cutting write-tool blast radius by **94.44%** (`36 → 2` exposures) while achieving **98.33% decision accuracy**, **100% scam recall** (vs. `0%` single-agent baseline), and **100% prompt-injection defense** across 120 benchmark jobs (`evals/results/decision_eval.json`, `rd_a_tool_design.json`, `rd_c_agent_comparison.json`).
+- Built a 10-variant hybrid RAG & deterministic claim-verification pipeline (`HybridCorpusIndex`), reaching **1.0000 Recall@5 / nDCG@10** in **4.87 ms** (`v3`) and reducing unsupported proposal claims from **50.0% to 0.0%** across 336 dev queries (`evals/results/rag_eval.json`, `judge_calibration.json`).
