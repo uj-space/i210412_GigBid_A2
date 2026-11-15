@@ -1,8 +1,12 @@
 """GigBid FastAPI backend entrypoint."""
 from __future__ import annotations
 
+from pathlib import Path
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from agent.mcp_client import is_marketplace_degraded
 from apps.api.routers import analytics, approvals, auth, jobs, messages, proposals, runs
@@ -30,6 +34,20 @@ async def health():
         "service": "gigbid-api",
         "marketplace_degraded": is_marketplace_degraded(),
     }
+
+
+_WEB_DIST = Path(__file__).resolve().parents[1] / "web" / "dist"
+if _WEB_DIST.exists():
+    _ASSETS_DIR = _WEB_DIST / "assets"
+    if _ASSETS_DIR.exists():
+        app.mount("/assets", StaticFiles(directory=str(_ASSETS_DIR)), name="assets")
+
+    @app.get("/{full_path:path}")
+    async def serve_spa(full_path: str):
+        candidate = _WEB_DIST / full_path
+        if full_path and candidate.is_file():
+            return FileResponse(candidate)
+        return FileResponse(_WEB_DIST / "index.html")
 
 
 if __name__ == "__main__":

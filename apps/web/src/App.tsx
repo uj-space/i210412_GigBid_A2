@@ -71,6 +71,22 @@ function SignIn() {
           >
             {loading ? 'Signing in…' : 'Enter GigBid'}
           </button>
+          <button
+            type="button"
+            disabled={loading}
+            onClick={async () => {
+              setLoading(true);
+              try {
+                await login('Reviewer (Preloaded)', 'AI/ML Engineer');
+                navigate('/jobs');
+              } finally {
+                setLoading(false);
+              }
+            }}
+            className="w-full rounded-lg border border-indigo-200 bg-indigo-50 py-2 text-xs font-semibold text-indigo-700 hover:bg-indigo-100"
+          >
+            Reviewer Quick Login (AI/ML Engineer)
+          </button>
         </div>
         <p className="text-center text-xs text-slate-400">
           Every proposal and message requires your approval before sending.
